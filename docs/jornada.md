@@ -11,9 +11,10 @@
 - **Medos e dúvidas:** "Vou pagar duas contas?", "Quando o desconto começa?", "E se a primeira fatura não chegar?". Tem receio de perder uma informação importante, de não perceber quando precisa agir e de deixar passar o vencimento sem querer.
 - **Canais que usa:** WhatsApp como principal canal, celular para acessar site ou app, PIX para pagamentos e e-mail ocasionalmente.
 
-## Mapa
+## Mapa de jornada
+[Mapa de jornada em PNG](wireframes/jornada-oficial1.png)
 
-![Mapa de jornada]
+![Mapa de jornada](wireframes/jornada-oficial1.png)
 
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -36,9 +37,11 @@
 - **Medos e dúvidas:** Receio de que a fatura não chegue e ela fique inadimplente sem saber, de pagar duas contas (Cemig e Bulbe), de cair em golpe ao receber mensagem de número desconhecido e de não conseguir resolver sozinha se algo der errado.
 - **Canais que usa:** WhatsApp como principal canal, celular para acessar o site com ajuda do filho e telefone para falar com atendimento. Raramente usa e-mail e quase nunca o app.
 
-## Mapa
+## Mapa de jornada
 
-![Mapa de jornada]
+[Mapa de jornada em PNG]!(wireframes/jornada-oficial2.png)
+
+![Mapa de jornada](wireframes/jornada-oficial2.png)
 
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
