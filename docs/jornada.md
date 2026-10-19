@@ -54,4 +54,6 @@
 
 ## Oportunidades registradas como Issues
 
-- [ ] #[número] [título da oportunidade]
+- OP01 #18 - Orientação acessível durante o silêncio pós-adesão.
+- OP02 #19 - Redução da dependência de mensagens externas.
+- OP03 #20 - Visibilidade do andamento da contratação. 
