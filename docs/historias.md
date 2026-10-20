@@ -5,6 +5,7 @@
 | ID | História | Oportunidade de origem | Prioridade | Issue |
 | --- | --- | --- | --- | --- |
 | HU01 | Como cliente que acabou de contratar a Bulbe, quero receber orientações claras sobre o que acontece após a adesão e sobre o que preciso fazer durante a espera, para entender as próximas etapas e saber onde buscar informações, mesmo que eu não receba mensagens da empresa. | OP01 #18 – Orientação acessível durante o silêncio pós-adesão | alta | #16 |
+| HU02 | Como cliente que acabou de contratar a Bulbe, quero confirmar ou corrigir meus contatos e escolher por quais canais receber atualizações, para não perder informações importantes durante a conexão. | OP02 #19 – Redução da dependência de mensagens externas | alta | #14 |
 | HU03 | Como cliente novo da Bulbe, quero consultar em um só lugar as mensagens que a Bulbe me enviou e as pendências que dependem de mim, para saber se meu processo está andando e o que preciso fazer, mesmo se alguma mensagem do WhatsApp não tiver chegado. | OP01 #18 Orientações sobre a primeira fatura durante o pós-adesão | alta | #17 |
 | HU04 | Como Helena, aposentada que aderiu com a ajuda do filho e quase não usa aplicativo, quero ver numa tela simples em que ponto está a minha adesão, da usina até a minha casa, e quanto vou economizar, para ter certeza de que o processo está andando enquanto ainda pago a Cemig e não desistir achando que caí em golpe. | OP03 #20 – Visibilidade do andamento da contratação | alta | #15 |
 | HU05 | Como Helena, aposentada que aderiu à Bulbe com a ajuda do filho e tem dificuldade com tecnologia, quero acessar uma explicação simples sobre como funcionará minha primeira fatura, para saber o que esperar da cobrança, entender a relação entre as contas da Cemig e da Bulbe e não ficar preocupada enquanto aguardo. | OP01 #18 Orientações sobre a primeira fatura durante o pós-adesão | alta | #13 |
@@ -34,6 +35,23 @@
 - [ ] Após confirmar a leitura, permite prosseguir para a HU02.
 - [ ] Oferece acesso às informações das HU02, HU03 e HU04.
 - [ ] Funciona em celulares, com boa legibilidade e navegação.
+
+### HU02
+
+**Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão
+
+**Dor e evidência:** Cerca de 20% das mensagens de WhatsApp falham, e clientes chegaram a ficar até 20 dias sem comunicação durante o onboarding. Contatos incorretos ou não confirmados podem fazer o cliente perder avisos importantes.
+
+**Indicador que pretende mover:** Entregabilidade das comunicações.
+
+**Tela:** “Confirme seus contatos” (wireframe relacionado à Issue #22).
+
+- [ ] Exibe o telefone e o e-mail informados pelo cliente durante a adesão.
+- [ ] Permite confirmar os contatos ou editar os dados.
+- [ ] Permite selecionar WhatsApp, e-mail ou ambos como canais para receber atualizações.
+- [ ] Valida o formato do telefone e do e-mail e informa quando houver algum erro.
+- [ ] Após a confirmação, mostra uma mensagem de sucesso.
+- [ ] Funciona em celulares, com campos legíveis e sem rolagem horizontal.
 
 ### HU03
 
