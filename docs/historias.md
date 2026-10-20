@@ -12,6 +12,7 @@
 ## Critérios de aceite
 
 ### HU01
+
 **Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão
 
 **Dor e evidência:** Clientes chegaram a ficar até 20 dias sem comunicação durante o onboarding, segundo os dados apresentados pela Bulbe.
@@ -32,6 +33,18 @@
 - [ ] Após confirmar a leitura, permite prosseguir para a HU02.
 - [ ] Oferece acesso às informações das HU02, HU03 e HU04.
 - [ ] Funciona em celulares, com boa legibilidade e navegação.
+
+### HU03
+
+**Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão · **Dor e evidência:** silêncio no onboarding; clientes chegaram a ficar 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham, então o cliente pode perder avisos importantes. · **Indicador que pretende mover:** churn do 1º mês · **Tela:** "Central de avisos" (*imagem*)
+
+- [ ] Lista os avisos do cliente lidos de um arquivo JSON com fetch, do mais recente para o mais antigo
+- [ ] Cada aviso mostra data, título, texto curto e canal de envio (WhatsApp, e-mail ou app)
+- [ ] Pendências aparecem no topo, destacadas e com prazo
+- [ ] Sem pendências, a tela exibe "Nenhuma pendência. Seu processo está andando."
+- [ ] Avisos não lidos aparecem destacados e são marcados como lidos ao abrir
+- [ ] Layout funciona no celular (360px) sem rolagem horizontal
+- [ ] Página carrega sem erros no console
 
 ### HU04
 **Persona:** Helena (persona 2) · **Momento da jornada:** Adesão → Espera pela conexão
@@ -68,3 +81,4 @@
 - [ ] Uma seção explica o que fazer caso a primeira fatura não seja recebida, indicando como buscar ajuda pelos canais oficiais da Bulbe.
 - [ ] As informações permanecem disponíveis para consulta mesmo que o cliente não receba as mensagens de comunicação da Bulbe.
 - [ ] A tela utiliza linguagem simples, fontes legíveis, bom contraste, botões adequados para navegação pelo celular e elementos acessíveis para usuários com pouca familiaridade com tecnologia.
+
