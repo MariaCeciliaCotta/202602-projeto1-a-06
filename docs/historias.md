@@ -55,7 +55,7 @@
 
 ### HU03
 
-**Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão · **Dor e evidência:** silêncio no onboarding; clientes chegaram a ficar 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham, então o cliente pode perder avisos importantes. · **Indicador que pretende mover:** churn do 1º mês · **Tela:** "Central de avisos" (docs/wireframes/hu03-central-de-avisos.png)
+**Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão · **Dor e evidência:** silêncio no onboarding; clientes chegaram a ficar 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham, então o cliente pode perder avisos importantes. · **Indicador que pretende mover:** Entregabilidade das comunicações· **Tela:** "Central de avisos" (docs/wireframes/hu03-central-de-avisos.png)
 
 - [ ] Lista os avisos do cliente lidos de um arquivo JSON com fetch, do mais recente para o mais antigo
 - [ ] Cada aviso mostra data, título, texto curto e canal de envio (WhatsApp, e-mail ou app)
