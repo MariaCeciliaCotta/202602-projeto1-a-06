@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | --- |
 | HU01 | Como cliente que acabou de contratar a Bulbe, quero receber orientações claras sobre o que acontece após a adesão e sobre o que preciso fazer durante a espera, para entender as próximas etapas e saber onde buscar informações, mesmo que eu não receba mensagens da empresa. | OP01 #18 – Orientação acessível durante o silêncio pós-adesão | alta | #16 |
 | HU02 | Como cliente que acabou de contratar a Bulbe, quero confirmar ou corrigir meus contatos e escolher por quais canais receber atualizações, para não perder informações importantes durante a conexão. | OP02 #19 – Redução da dependência de mensagens externas | alta | #14 |
-| HU03 | Como cliente novo da Bulbe, quero consultar em um só lugar as mensagens que a Bulbe me enviou e as pendências que dependem de mim, para saber se meu processo está andando e o que preciso fazer, mesmo se alguma mensagem do WhatsApp não tiver chegado. | OP01 #18 Orientações sobre a primeira fatura durante o pós-adesão | alta | #17 |
+| HU03 | Como cliente novo da Bulbe, quero consultar em um só lugar as mensagens que a Bulbe me enviou e as pendências que dependem de mim, para saber se meu processo está andando e o que preciso fazer, mesmo se alguma mensagem do WhatsApp não tiver chegado. | OP01 #18 – Orientação acessível durante o silêncio pós-adesão | alta | #17 |
 | HU04 | Como Helena, aposentada que aderiu com a ajuda do filho e quase não usa aplicativo, quero ver numa tela simples em que ponto está a minha adesão, da usina até a minha casa, e quanto vou economizar, para ter certeza de que o processo está andando enquanto ainda pago a Cemig e não desistir achando que caí em golpe. | OP03 #20 – Visibilidade do andamento da contratação | alta | #15 |
 | HU05 | Como Helena, aposentada que aderiu à Bulbe com a ajuda do filho e tem dificuldade com tecnologia, quero acessar uma explicação simples sobre como funcionará minha primeira fatura, para saber o que esperar da cobrança, entender a relação entre as contas da Cemig e da Bulbe e não ficar preocupada enquanto aguardo. | OP01 #18 Orientações sobre a primeira fatura durante o pós-adesão | alta | #13 |
 
@@ -55,7 +55,7 @@
 
 ### HU03
 
-**Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão · **Dor e evidência:** silêncio no onboarding; clientes chegaram a ficar 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham, então o cliente pode perder avisos importantes. · **Indicador que pretende mover:** churn do 1º mês · **Tela:** "Central de avisos" (*imagem*)
+**Persona:** Fernando (persona 1) · **Momento da jornada:** Adesão → Espera pela conexão · **Dor e evidência:** silêncio no onboarding; clientes chegaram a ficar 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham, então o cliente pode perder avisos importantes. · **Indicador que pretende mover:** Entregabilidade das comunicações· **Tela:** "Central de avisos" (docs/wireframes/hu03-central-de-avisos.png)
 
 - [ ] Lista os avisos do cliente lidos de um arquivo JSON com fetch, do mais recente para o mais antigo
 - [ ] Cada aviso mostra data, título, texto curto e canal de envio (WhatsApp, e-mail ou app)
