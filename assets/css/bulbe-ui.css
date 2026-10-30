@@ -1,0 +1,135 @@
+/* =========================================================
+   Layout base das telas: cabeçalho + menu de baixo
+   Cores e fonte iguais às do app atual da Bulbe.
+   ========================================================= */
+
+:root {
+  --cor-azul: #08068d;
+  --cor-azul-claro: #eef0ff;
+  --cor-texto: #3e4d5b;
+  --cor-texto-secundario: #536679;
+  --cor-linha: #d1d9e0;
+  --cor-branco: #ffffff;
+  --fonte: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--cor-texto);
+  background: var(--cor-branco);
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+  background: var(--cor-azul);
+}
+
+.topo-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--cor-branco);
+}
+
+.topo-botao svg {
+  width: 24px;
+  height: 24px;
+}
+
+.topo-logo img {
+  height: 29px;
+}
+
+.topo-direita {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topo-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-branco);
+  background: var(--cor-azul-claro);
+  color: var(--cor-azul);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.topo-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Conteúdo da tela ---------- */
+main {
+  padding: 24px 20px;
+  padding-bottom: 110px; /* espaço para o menu de baixo não cobrir o conteúdo */
+}
+
+/* ---------- Menu de baixo ---------- */
+.menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  padding: 8px 8px 12px;
+  background: var(--cor-branco);
+  border-top: 1px solid var(--cor-linha);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.menu a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+}
+
+.menu-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+.menu-icone svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Item da tela atual: coloque class="ativo" no <a> da sua tela */
+.menu a.ativo {
+  color: var(--cor-azul);
+  font-weight: 600;
+}
+
+.menu a.ativo .menu-icone {
+  background: var(--cor-azul-claro);
+}
