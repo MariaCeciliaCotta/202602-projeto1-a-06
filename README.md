@@ -1,105 +1,94 @@
-# Bulbe Presente
+Bulbe Presente
+Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
+Cliente: Bulbe Energia · Turma A · Squad 06
 
-> Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
-> Cliente: **Bulbe Energia** · Turma **A** · Squad **06**
+O Bulbe Presente é um protótipo web para orientar o cliente entre a adesão e a primeira fatura. A proposta é manter as informações acessíveis mesmo quando uma mensagem de WhatsApp não chega.
 
-Aplicação web que acompanha o cliente novo da Bulbe entre a adesão e a primeira fatura, para que ele nunca fique sem saber o que está acontecendo, mesmo quando as mensagens de WhatsApp não chegam.
+Situação em 03/11/2026: MVP em integração. O repositório tem a estrutura da HU01 e a HU04 na main; a finalização da HU01 está na PR #46. HU02, HU03 e HU05 ainda não aparecem na pasta pages/ da main; sua integração permanece pendente. A situação atual deve ser conferida na aba Pull requests.
+1. Problema e evidências
+Os dados apresentados pela Bulbe ao squad indicam dificuldades na comunicação e no primeiro pagamento durante a entrada de novos clientes:
+- Clientes chegaram a passar até 20 dias sem comunicação durante o onboarding. Esse é um caso observado, não um prazo padrão de conexão.
+- Aproximadamente 20% das mensagens de WhatsApp falham, inclusive comunicações relacionadas à fatura.
+- A inadimplência da primeira fatura foi de 32,4% no período de setembro de 2025 a julho de 2026, segundo os dados utilizados pelo grupo.
+Dor central escolhida: silêncio durante o onboarding, entre a adesão e a primeira fatura.
+Indicador principal que a solução pretende melhorar: entregabilidade das comunicações — possibilidade de o cliente receber ou consultar as informações por canais alternativos.
+Indicadores secundários: churn no primeiro mês e pagamento da primeira fatura.
 
----
+Esses números contextualizam o problema. O protótipo não mede, por si só, melhorias reais nesses indicadores.
+2. Personas e jornada
+A solução considera Fernando, cliente de 34 anos, em Belo Horizonte, que precisa de orientações objetivas, e Helena, cliente de 63 anos, em Contagem, que busca segurança e clareza na contratação.
+- [Mapas de jornada e evidências](docs/jornada.md)
+- [Histórias de usuário e critérios de aceite](docs/historias.md)
+- [Wireframes](docs/wireframes/)
+3. Telas do MVP e rastreabilidade
+Tela	Função	História / origem	Indicador
+HU01 · Boas-vindas	Confirma o recebimento da adesão e orienta sobre as contas e etapas	#16 · OP01 #18	Entregabilidade
+HU02 · Contatos	Permite conferir dados e canais de comunicação	#14 · OP02 #19	Entregabilidade
+HU03 · Avisos	Reúne avisos e pendências em um só lugar	#17 · OP01 #18	Entregabilidade
+HU04 · Energia	Mostra o andamento da conexão e a estimativa de economia	#15 · OP03 #20	Churn no 1º mês
+HU05 · Primeira fatura	Explica a cobrança inicial e como consultar orientações	#13 · OP01 #18	Pagamento da 1ª fatura
 
-## 1. Problema
 
-Os dados apresentados pela Bulbe mostram que o problema está na entrada do cliente, não na carteira: a inadimplência da 1ª fatura é de 32,4%, contra 1,6% na carteira com mais de 4 meses. Entre as causas apontadas pela empresa, o squad escolheu atacar o período entre o "sim" do cliente e a chegada da primeira fatura, quando ele fica sem nenhum sinal de que o processo está andando.
+Fluxo proposto, ainda sujeito à confirmação do grupo: HU01 → HU02 → HU04 → HU05; a HU03 seria acessível como central de avisos. A Sprint Review I ainda registra a necessidade de validar esse fluxo. A navegação integral depende de todas as páginas estarem integradas.
+4. Como executar
+Requisitos: navegador atualizado, VS Code e extensão Live Server (ou outro servidor HTTP local). Não é necessário instalar bibliotecas JavaScript.
+1. Faça o clone do repositório ou baixe seu ZIP pelo GitHub.
+2. Abra a pasta do projeto no VS Code.
+3. Abra index.html com Open with Live Server.
+4. Para testar a primeira etapa do fluxo, abra pages/hu01.html.
+5. Para testar o acompanhamento de energia, abra pages/acompanhe-sua-energia.html.
+Estado atual da página inicial: na main, o index.html ainda é um exemplo de estrutura inicial (mostra o título provisório "Nome da solução do squad"), e não a página final do MVP. Ele apresenta dados fictícios carregados de data/clientes.json com fetch, por meio de assets/js/main.js e assets/js/api.js. Abrir o HTML diretamente com file:// pode impedir a leitura do JSON. Use o Live Server.
+Arquivos de navegação
+Tela	Caminho relativo em pages/	Situação na main em 03/11/2026
+HU01	hu01.html	Estrutura disponível; finalização pendente na PR #46
+HU02	confirmar-contatos.html	Nome proposto; arquivo ainda ausente
+HU03	central-de-avisos.html	Nome proposto; arquivo ainda ausente
+HU04	acompanhe-sua-energia.html	Arquivo disponível
+HU05	primeira-fatura.html	Nome proposto; arquivo ainda ausente
 
-- **Dor escolhida:** silêncio no onboarding
-- **Evidência:** clientes chegaram a ficar até 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham (inclusive a que leva a fatura)
-- **Indicador principal que a solução pretende mover:** entregabilidade das comunicações, entendida como o percentual de clientes novos que recebem e veem as informações do onboarding por qualquer canal (WhatsApp, e-mail ou site)
-- **Indicadores secundários:** churn do 1º mês (HU04) e pagamento da 1ª fatura (HU05)
 
-## 2. Persona e jornada
+Importante: os nomes das três páginas ainda ausentes são propostas de integração, não caminhos já publicados. Devem ser confirmados com os responsáveis antes de fixar links definitivos. Consulte [os templates](docs/templates.md).
+5. Tecnologias e estrutura
+- HTML5, CSS3 (Flexbox, Grid, responsividade) e JavaScript puro.
+- Dados fictícios em JSON, lidos com fetch onde necessário.
+- GitHub Issues, branches, Pull Requests e Projects para organizar as entregas.
+index.html                 Página inicial e dados de exemplo
+pages/                     Telas do MVP
+assets/css/                Estilos compartilhados e das telas
+assets/js/                 Scripts e leitura dos dados JSON
+assets/img/                Logos e imagens
+data/                      Clientes e faturas fictícios
+docs/jornada.md           Personas e jornadas
+docs/historias.md         Histórias e critérios de aceite
+docs/wireframes/          Wireframes e imagens das telas
+docs/sprints/             Registro das Sprint Reviews
+docs/avaliacao-final.md   Checklist planejado (ainda não publicado na main)
+6. Organização e evidências de desenvolvimento
+- PR #39 — README e padronização dos wireframes
+- PR #41 — Template compartilhado
+- PR #42 — Template exclusivo da HU01
+- PR #44 — Implementação da HU04
+- PR #45 — Estrutura e layout da HU01
+- PR #46 — Finalização da HU01 (em revisão na data deste registro)
+A regra registrada na Sprint Review I prevê integrar alterações à main por PR revisada por outro integrante. Os critérios de aceite são registrados em docs/historias.md e devem ser marcados somente após verificação.
 
-- **Persona A:** Fernando, 34 anos, analista de RH em Belo Horizonte; aderiu pelo celular, tem rotina corrida e espera ser avisado quando precisar agir
-- **Persona B:** Helena, 63 anos, aposentada em Contagem; aderiu com a ajuda do filho, tem pouca familiaridade com tecnologia e medo de golpe
-- **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
-- **Momentos críticos:** Adesão e Espera pela conexão
+Quadro: Aba Projects do repositório. O link direto do quadro utilizado pelo squad ainda precisa ser confirmado pelos integrantes.
+7. Equipe
+Integrante	GitHub	Responsabilidade
+Bernardo Paolucci	@bpaolucci	HU04 · Energia
+Daniel Ferreira	@danielferreira88	HU03 · Avisos
+Laura Amorim	@amorimplaura	HU02 · Contatos
+Maria Cecília Cotta	@MariaCeciliaCotta	HU05 · Primeira fatura
+Ygor	@bygor840	HU01 · Pós-adesão
 
-## 3. Solução
 
-Cinco telas, uma por integrante, que mantêm o cliente informado durante a espera sem depender só do WhatsApp.
+8. Entregas e acompanhamento
+Etapa	Registro
+Jornada, oportunidades e histórias	[Jornada](docs/jornada.md), [Histórias](docs/historias.md) e Issues
+Wireframes	[Pasta de wireframes](docs/wireframes/)
+Sprint Review I	[Registro](docs/sprints/README.md)
+Implementação e Sprint Review II	[Preparação da Review II](docs/sprints/sprint-review-ii.md) — documento preparado, publicação pendente
+Verificação de aceite e entrega final	[Checklist de avaliação](docs/avaliacao-final.md) — documento preparado, publicação pendente
 
-| Tela | O que faz | História relacionada | Indicador |
-| --- | --- | --- | --- |
-| Boas-vindas pós-adesão | Confirma a adesão e explica as próximas etapas e por que o cliente ainda paga a Cemig | HU01 | Entregabilidade das comunicações |
-| Confirme seus contatos | Permite confirmar ou corrigir telefone e e-mail e escolher os canais de atualização | HU02 | Entregabilidade das comunicações |
-| Central de avisos | Reúne as mensagens enviadas pela Bulbe e as pendências do cliente, com prazo | HU03 | Entregabilidade das comunicações |
-| Acompanhe sua energia | Mostra em que etapa está a adesão, da usina até a casa, e a economia estimada | HU04 | Churn do 1º mês |
-| Entenda sua primeira fatura | Explica como será a primeira cobrança e o que fazer se ela não chegar | HU05 | Pagamento da 1ª fatura |
 
-- **Histórias de usuário:** [docs/historias.md](docs/historias.md)
-- **Wireframes:** [docs/wireframes/](docs/wireframes/)
-
-## 4. Tecnologias
-
-- HTML, CSS e JavaScript puro (vanilla)
-- Dados fictícios em JSON, lidos com `fetch` (pasta [`data/`](data/))
-- Git e GitHub (Issues, Projects e Pull Requests)
-
-## 5. Como executar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/MariaCeciliaCotta/202602-projeto1-a-06.git
-   ```
-2. Abra a pasta no VS Code.
-3. Instale a extensão **Live Server** (o VS Code vai sugerir automaticamente).
-4. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
-
-> Abrir o `index.html` direto no navegador (duplo clique) não funciona: o `fetch` dos arquivos JSON exige um servidor.
-
-## 6. Estrutura do repositório
-
-```
-├── index.html            # Página inicial
-├── pages/                # Demais telas da solução
-├── assets/
-│   ├── css/style.css     # Estilos
-│   ├── js/main.js        # Lógica da página inicial
-│   ├── js/api.js         # Leitura dos dados (fetch)
-│   └── img/              # Imagens e ícones
-├── data/
-│   ├── clientes.json     # Clientes fictícios
-│   └── faturas.json      # Faturas fictícias
-├── docs/
-│   ├── jornada.md        # Personas e mapas de jornada
-│   ├── historias.md      # Histórias de usuário e critérios de aceite
-│   ├── personas/         # Personas criadas por cada integrante
-│   ├── wireframes/       # Wireframes das telas (hu01 a hu05) e mapas de jornada
-│   └── sprints/          # Registro das Sprint Reviews
-└── .github/              # Modelos de Issue e de Pull Request
-```
-
-## 7. Quadro do projeto
-
-- **GitHub Projects:** [LINK_DO_QUADRO]
-
-## 8. Equipe
-
-| Integrante | GitHub | Papel principal |
-| --- | --- | --- |
-| Bernardo Paolucci | [@bpaolucci](https://github.com/bpaolucci) | [HU04] — [Acompanhamento de energia] |
-| Daniel Ferreira | [@danielferreira88](https://github.com/danielferreira88) | [HU03] — [Central de avisos] |
-| Laura Amorim | [@amorimplaura](https://github.com/amorimplaura) | [HU02] — [Confirmação de contatos] |
-| Maria Cecília Cotta | [@MariaCeciliaCotta](https://github.com/MariaCeciliaCotta) | [HU05] — [Primeira fatura] |
-| Ygor | [@bygor840](https://github.com/bygor840) | [HU01] — [Boas vindas e pós adesão] |
-
-## 9. Entregas
-
-| Marco | Aula | Status |
-| --- | --- | --- |
-| Mapa de jornada | 19 | ✅ Concluído |
-| Histórias de usuário | 20 | ✅ Concluído |
-| Wireframes | 21–23 | ✅ Concluído |
-| Sprint Review I | 24 | ⏳ Em andamento |
-| Implementação | 25–28 | — |
-| Sprint Review II | 29 | — |
-| Versão final | 30 | — |
+Limites atuais: a aplicação ainda depende da integração das cinco telas, da verificação dos links e dos testes finais do grupo. Não há evidência de testes de ponta a ponta de todas as telas na main. Os dois documentos indicados como 'publicação pendente' acima precisam ser adicionados na mesma branch antes da abertura da PR de documentação.
