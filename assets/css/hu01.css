@@ -1,0 +1,45 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EBEDF4;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: 56px 1fr;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #F7F8FC;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    background-color: white;
+}
+
+#header img {
+    width: 86px;
+    max-width: 100%;
+    height: auto;
+}
+
+#header h1 {
+    font-size: 16px;
+    color: #08068D;
+}
+
+#main {
+    width: 100%;
+    padding: 16px;
+}
