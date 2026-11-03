@@ -50,105 +50,111 @@
 
     <!-- ================= CONTEÚDO DA SUA TELA ================= -->
     <main>
-
-        <div class="cabecalho-secao">
+        <section class="cabecalho-secao" aria-labelledby="titulo-principal">
             <span class="badge-azul">CENTRAL DE ORIENTAÇÕES</span>
-            <h1 class="titulo-pagina">O que você gostaria de saber?</h1>
+            <h1 id="titulo-principal" class="titulo-pagina">O que você gostaria de saber?</h1>
             <p class="subtitulo-pagina">Escolha um assunto para entender melhor sua primeira fatura.</p>
-        </div>
+        </section>
 
-        <div class="lista-opcoes">
-            <!-- Opção 1 -->
-            <a href="#" class="cartao-opcao">
-                <div class="cartao-icone icone-verde-claro">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                </div>
-                <div class="cartao-texto">
-                    <h3>Entenda sua primeira fatura</h3>
-                    <p>Veja como funciona a cobrança na Bulbe</p>
-                </div>
-                <div class="cartao-seta">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                </div>
-            </a>
+        <nav aria-label="Opções de orientação da fatura">
+            <ul class="lista-opcoes">
 
-            <!-- Opção 2 -->
-            <a href="#" class="cartao-opcao">
-                <div class="cartao-icone icone-azul-claro">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                        <line x1="1" y1="10" x2="23" y2="10"></line>
-                    </svg>
-                </div>
-                <div class="cartao-texto">
-                    <h3>Qual conta devo pagar?</h3>
-                    <p>Saiba o que fazer antes e depois da compensação.</p>
-                </div>
-                <div class="cartao-seta">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                </div>
-            </a>
+                <li>
+                    <a href="#" class="cartao-opcao">
+                        <span class="cartao-icone icone-verde-claro" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </span>
+                        <span class="cartao-texto">
+                            <h2>Entenda sua primeira fatura</h2>
+                            <p>Veja como funciona a cobrança na Bulbe</p>
+                        </span>
+                        <span class="cartao-seta" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </span>
+                    </a>
+                </li>
 
-            <!-- Opção 3 -->
-            <a href="#" class="cartao-opcao">
-                <div class="cartao-icone icone-amarelo-claro">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </div>
-                <div class="cartao-texto">
-                    <h3>Como receber minha fatura?</h3>
-                    <p>Confira onde a cobrança será enviada.</p>
-                </div>
-                <div class="cartao-seta">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                </div>
-            </a>
+                <li>
+                    <a href="#" class="cartao-opcao">
+                        <span class="cartao-icone icone-azul-claro" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                        </span>
+                        <span class="cartao-texto">
+                            <h2>Qual conta devo pagar?</h2>
+                            <p>Saiba o que fazer antes e depois da compensação.</p>
+                        </span>
+                        <span class="cartao-seta" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </span>
+                    </a>
+                </li>
 
-            <!-- Opção 4 -->
-            <a href="#" class="cartao-opcao">
-                <div class="cartao-icone icone-cinza-claro">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                </div>
-                <div class="cartao-texto">
-                    <h3>Principais dúvidas</h3>
-                    <p>Respostas rápidas sobre a primeira fatura.</p>
-                </div>
-                <div class="cartao-seta">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                </div>
-            </a>
-        </div>
+                <li>
+                    <a href="#" class="cartao-opcao">
+                        <span class="cartao-icone icone-amarelo-claro" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </span>
+                        <span class="cartao-texto">
+                            <h2>Como receber minha fatura?</h2>
+                            <p>Confira onde a cobrança será enviada.</p>
+                        </span>
+                        <span class="cartao-seta" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </span>
+                    </a>
+                </li>
 
+                <li>
+                    <a href="#" class="cartao-opcao">
+                        <span class="cartao-icone icone-cinza-claro" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </span>
+                        <span class="cartao-texto">
+                            <h2>Principais dúvidas</h2>
+                            <p>Respostas rápidas sobre a primeira fatura.</p>
+                        </span>
+                        <span class="cartao-seta" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
     </main>
-
 
     <!-- ================= MENU DE BAIXO ================= -->
     <!-- Coloque class="ativo" no link da sua tela (e tire do link de Energia) -->
