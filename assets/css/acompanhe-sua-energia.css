@@ -434,6 +434,111 @@ h1, h2, p, ol, ul { margin: 0; }
 
 .aviso-atraso svg { flex-shrink: 0; width: 22px; height: 22px; }
 
+/* ---------- Card de economia ---------- */
+.valor {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.previsao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.previsao-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cor-branco);
+  color: var(--cor-verde-escuro);
+}
+
+.previsao-icone svg { width: 22px; height: 22px; }
+
+/* ---------- Rosca (gráfico em CSS) ---------- */
+.grafico {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rosca {
+  position: relative;
+  flex-shrink: 0;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: conic-gradient(var(--cor-verde) var(--parte-bulbe, 0%), var(--cor-branco) 0);
+}
+
+.rosca-centro {
+  position: absolute;
+  inset: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--cor-verde-fundo);
+  line-height: 1.1;
+}
+
+.legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.legenda li { display: flex; gap: 8px; }
+.legenda li > span:last-child { display: flex; flex-direction: column; }
+
+.legenda-cor {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border-radius: 50%;
+}
+
+.legenda-bulbe { background: var(--cor-verde); }
+.legenda-cemig { background: var(--cor-linha); }
+
+/* ---------- Botão "Entenda sua 1ª fatura" ---------- */
+.cta-fatura {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--cor-azul);
+  color: var(--cor-branco);
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(8, 6, 141, 0.25);
+}
+
+.cta-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--cor-branco);
+  color: var(--cor-azul);
+}
+
+.cta-icone svg { width: 24px; height: 24px; }
+.cta-texto { display: flex; flex: 1; flex-direction: column; }
+.cta-seta { flex-shrink: 0; width: 24px; height: 24px; }
+
 /* ---------- Contato oficial ---------- */
 .contato {
   display: flex;
