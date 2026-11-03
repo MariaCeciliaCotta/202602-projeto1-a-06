@@ -1,14 +1,6 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #EBEDF4;
-}
+body { font-family: Arial, sans-serif; background-color: #EBEDF4; color: #243455; }
 
 #container {
     display: grid;
@@ -28,18 +20,164 @@ body {
     background-color: white;
 }
 
-#header img {
-    width: 86px;
-    max-width: 100%;
-    height: auto;
-}
+#header img { width: 86px; height: auto; }
 
-#header h1 {
-    font-size: 16px;
-    color: #08068D;
-}
+#header h1 { font-size: 16px; color: #08068D; }
 
-#main {
-    width: 100%;
+#main { padding: 16px; }
+
+.conteudo { max-width: 430px; margin: 0 auto; }
+
+.titulo-pagina { margin: 2px 0 16px; font-size: 22px; color: #08068D; }
+
+.cartao {
+    margin-bottom: 12px;
     padding: 16px;
+    background-color: white;
+    border-radius: 14px;
+    border: 1px solid #e6ebf6;
+}
+
+.cartao h3 { margin-bottom: 6px; font-size: 17px; color: #08068D; }
+
+.cartao p { font-size: 13px; line-height: 1.45; }
+
+.subtitulo { margin-bottom: 14px; color: #64728d; }
+
+.confirmacao {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background-color: #eaf8f1;
+    border-color: #ddf4e6;
+}
+
+.confirmacao h3 { color: #0a6553; }
+
+.icone-confirmacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #20c985;
+    color: white;
+    font-size: 27px;
+}
+
+.etapas { margin-top: 16px; }
+
+.etapa { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 19px; }
+
+.etapa:last-child { margin-bottom: 0; }
+
+.numero {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #08068D;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.etapa h4, .situacao h4 { margin: 1px 0 5px; font-size: 13px; color: #08068D; }
+
+.etapa p, .situacao p { color: #60718c; }
+
+.faturas, .situacoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+.fatura { overflow: hidden; border-radius: 10px; border: 1px solid #d7e2ec; background-color: white; }
+
+.cemig { border-color: #a4d8c3; }
+
+.fatura-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 9px 8px;
+    background-color: #e6f4ed;
+    color: #07665b;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fatura-topo span { font-size: 8px; font-weight: bold; }
+
+.bulbe .fatura-topo { color: white; background-color: #3838b4; }
+
+.fatura-corpo { padding: 11px 8px; }
+
+.fatura-corpo small { display: block; margin-bottom: 8px; color: #69768e; font-size: 10px; }
+
+.linha-falsa { height: 6px; margin-bottom: 5px; background-color: #e5ebf1; border-radius: 4px; }
+
+.linha-falsa.curta { width: 70%; margin-bottom: 16px; }
+
+.fatura-corpo p { margin-bottom: 9px; font-size: 10px; }
+
+.status-pagar, .status-aguardar { font-size: 10px; }
+
+.status-pagar { color: #009e71; }
+
+.status-aguardar { color: #8b94a6; }
+
+.situacao { padding: 10px; background-color: #f4f7ff; border: 1px solid #e0e6fb; border-radius: 10px; }
+
+.situacao h4 { font-size: 11px; }
+
+.situacao strong { display: block; margin-bottom: 6px; font-size: 12px; color: #08068D; }
+
+.situacao p { font-size: 11px; }
+
+.nota { padding: 9px; border-radius: 8px; background-color: #f3f4f7; color: #69768e; }
+
+.atalhos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.atalhos a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9px;
+    background-color: #f6f8fe;
+    color: #08068D;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.atalhos a span { font-size: 26px; }
+
+.contrato { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+.contrato h3 { font-size: 13px; }
+
+.contrato p { color: #60718c; font-size: 11px; }
+
+.contrato button {
+    flex-shrink: 0;
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid #a2aed7;
+    background-color: white;
+    color: #818ca5;
+    font-size: 11px;
+}
+
+@media (max-width: 350px) {
+    #header h1 { font-size: 14px; }
+
+    .situacoes { grid-template-columns: 1fr; }
+
+    .cartao { padding: 12px; }
 }
