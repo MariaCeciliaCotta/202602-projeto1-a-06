@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulbe | Pós-adesão</title>
     <link rel="stylesheet" href="../assets/css/hu01.css">
+    <script src="../assets/js/hu01.js" defer></script>
 </head>
 <body>
     <div id="container">
@@ -96,6 +97,39 @@
                     <p class="nota">ⓘ Cobranças separadas ou antigas da Cemig devem ser conferidas.</p>
                 </section>
 
+                <details class="leitura" id="orientacao">
+                    <summary>
+                        <span class="icone-aviso">!</span>
+                        <span class="chamada-leitura">
+                            <small>LEITURA OBRIGATÓRIA</small>
+                            <strong>Recebeu duas contas? Veja qual pagar</strong>
+                            <span class="explicacao-leitura">Entenda por que chegam duas contas e saiba o que fazer em cada situação.</span>
+                            <span class="abrir-leitura">Ler orientação <span>⌄</span></span>
+                        </span>
+                    </summary>
+                    <div class="texto-leitura">
+                        <p class="aviso-importante" id="aviso-importante" hidden><strong>AVISO IMPORTANTE:</strong> Leia as orientações abaixo e confirme que entendeu qual conta pagar.</p>
+                        <h4>1. Por que posso receber duas contas de luz?</h4>
+                        <p>Durante a mudança para a Bulbe, você ainda pode receber uma fatura da Cemig. Isso não significa, por si só, que houve cobrança duplicada.</p>
+
+                        <h4>2. Qual conta devo pagar enquanto aguardo?</h4>
+                        <p>Continue pagando a Cemig normalmente até receber a confirmação da Bulbe sobre o início do serviço e as próximas orientações.</p>
+
+                        <h4>3. Quando muda a forma de pagamento?</h4>
+                        <p>Depois da confirmação da Bulbe, confira as instruções e as faturas recebidas antes de efetuar o pagamento.</p>
+
+                        <h4>4. Quando começo a economizar?</h4>
+                        <p>A economia não começa necessariamente no dia da adesão. O início depende da conclusão do processo e será informado pela Bulbe.</p>
+
+                        <h4>5. E se a Cemig enviar outra cobrança?</h4>
+                        <p>Contas antigas, parcelamentos e serviços específicos podem continuar aparecendo. Confira cada cobrança e procure a Bulbe se tiver dúvidas.</p>
+                        <div class="aceite">
+                            <input type="checkbox" id="leitura-confirmada">
+                            <label for="leitura-confirmada">Li e entendi qual conta devo pagar após a adesão.</label>
+                        </div>
+                    </div>
+                </details>
+
                 <section class="cartao contato">
                     <h3>Ficou sem notícias da Bulbe?</h3>
                     <p class="subtitulo">Consulte as informações diretamente, sem depender apenas do WhatsApp.</p>
@@ -114,6 +148,7 @@
                     <button type="button" disabled>Acessar contrato</button>
                 </section>
 
+                <a class="continuar" id="continuar" href="confirmar-contatos.html">Continuar →</a>
             </div>
         </main>
     </div>
