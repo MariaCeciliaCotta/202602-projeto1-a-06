@@ -53,6 +53,7 @@ h1, h2, p, ol, ul { margin: 0; }
   gap: 28px;
   max-width: 480px;
   margin: 0 auto;
+  zoom: 0.8; 
 }
 
 .mensagem-erro {
