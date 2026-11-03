@@ -1,3 +1,4 @@
+
 [
   {
     "id": 1,
@@ -9,7 +10,10 @@
     "whatsappConfirmado": false,
     "emailConfirmado": true,
     "consumoMedioKwh": 310,
-    "descontoPercentual": 15
+    "descontoPercentual": 15,
+    "telefone": "(31) 99999-0000",
+    "email": "marina.demo@exemplo.com",
+    "contatosFicticios": true
   },
   {
     "id": 2,
@@ -21,7 +25,10 @@
     "whatsappConfirmado": true,
     "emailConfirmado": true,
     "consumoMedioKwh": 220,
-    "descontoPercentual": 15
+    "descontoPercentual": 15,
+    "telefone": "(31) 98888-1111",
+    "email": "joao.demo@exemplo.com",
+    "contatosFicticios": true
   },
   {
     "id": 3,
@@ -33,6 +40,9 @@
     "whatsappConfirmado": true,
     "emailConfirmado": false,
     "consumoMedioKwh": 180,
-    "descontoPercentual": 12
+    "descontoPercentual": 12,
+    "telefone": "(34) 97777-2222",
+    "email": "ana.demo@exemplo.com",
+    "contatosFicticios": true
   }
 ]
