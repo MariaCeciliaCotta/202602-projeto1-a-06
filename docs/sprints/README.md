@@ -1,94 +1,85 @@
-# Sprint Review I
+# Sprint Review I — Registro do Squad 06
 
-> Projeto em Ciência de Dados I · Turma A · Squad 06
-> Data: 21/10/2026 · Sprint 1 (Desenhar): 12/10 a 22/10
+> Projeto em Ciência de Dados I · Ibmec BH · Turma A · Squad 06  
+> Sprint 1 (Desenhar): 12/10 a 22/10/2026 · Review indicada no registro original: 21/10/2026
 
-## 1. Dor escolhida e evidência
+Este documento preserva as entregas e o planejamento da **Sprint 1**. O andamento posterior da implementação aparece em uma seção separada, para não confundir planejamento com entregas concluídas.
 
-- **Dor:** silêncio no onboarding
-- **Evidência:** clientes chegaram a ficar até 20 dias sem nenhuma comunicação da Bulbe, e cerca de 20% das mensagens de WhatsApp falham
-- **Indicador principal:** entregabilidade das comunicações
-- **Indicadores secundários:** churn do 1º mês (HU04) e pagamento da 1ª fatura (HU05)
+## 1. Problema e evidências
+
+- **Dor central:** silêncio durante o onboarding após a adesão.
+- **Evidências apresentadas pela Bulbe:** houve casos de até 20 dias sem comunicação; aproximadamente 20% de falha média na entrega de mensagens de WhatsApp.
+- **Indicador principal pretendido:** entregabilidade das comunicações.
+- **Indicadores secundários:** churn no primeiro mês e pagamento da primeira fatura.
+
+O período de 20 dias representa casos históricos relatados, **não um prazo habitual de conexão**. O protótipo não mede diretamente a melhora desses indicadores.
 
 ## 2. Personas e momentos críticos
 
-- **Fernando, 34 anos:** analista de RH, rotina corrida, espera ser avisado quando precisar agir
-- **Helena, 63 anos:** aposentada, aderiu com ajuda do filho, pouca familiaridade com tecnologia e medo de golpe
-- **Momentos críticos da jornada:** Adesão e Espera pela conexão, quando o cliente fica sem sinal de que o processo está andando
+- **Fernando, 34 anos:** cliente em Belo Horizonte, rotina corrida, espera orientações quando precisa agir.
+- **Helena, 63 anos:** cliente em Contagem, aderiu com a ajuda do filho, busca segurança e explicações simples.
+- **Momentos críticos:** adesão, espera pela conexão e preparação para a primeira fatura.
 
-Mapa completo: [docs/jornada.md](../jornada.md)
+Consulte os [mapas de jornada](../jornada.md) e as [histórias e seus critérios de aceite](../historias.md).
 
-## 3. Histórias priorizadas para o MVP
+## 3. Histórias priorizadas
 
-| ID | Tela | Dor → momento | Indicador | Prioridade |
+| História | Tela | Oportunidade | Indicador | Prioridade |
 | --- | --- | --- | --- | --- |
-| HU01 | Boas-vindas pós-adesão | Silêncio → Adesão | Entregabilidade das comunicações | alta |
-| HU02 | Confirme seus contatos | Silêncio → Espera pela conexão | Entregabilidade das comunicações | alta |
-| HU03 | Central de avisos | Silêncio → Espera pela conexão | Entregabilidade das comunicações | alta |
-| HU04 | Acompanhe sua energia | Silêncio → Espera pela conexão | Churn do 1º mês | alta |
-| HU05 | Entenda sua primeira fatura | Silêncio → Espera pela conexão | Pagamento da 1ª fatura | alta |
+| HU01 | Boas-vindas pós-adesão | [OP01 #18](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/18) | Entregabilidade | Alta |
+| HU02 | Confirme seus contatos | [OP02 #19](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/19) | Entregabilidade | Alta |
+| HU03 | Central de avisos | [OP01 #18](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/18) | Entregabilidade | Alta |
+| HU04 | Acompanhe sua energia | [OP03 #20](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/20) | Churn no 1º mês | Alta |
+| HU05 | Entenda sua primeira fatura | [OP01 #18](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/18) | Pagamento da 1ª fatura | Alta |
 
-Histórias completas e critérios de aceite: [docs/historias.md](../historias.md)
+## 4. Wireframes e fluxo proposto
 
-## 4. Wireframes e navegação
-
-| Tela | Wireframe |
+| História | Wireframe |
 | --- | --- |
-| HU01 · Boas-vindas pós-adesão | [hu01-boas-vindas-pos-adesao.png](../wireframes/hu01-boas-vindas-pos-adesao.png) |
-| HU02 · Confirme seus contatos | [hu02-confirmar-contatos.png](../wireframes/hu02-confirmar-contatos.png) |
-| HU03 · Central de avisos | [hu03-central-de-avisos.png](../wireframes/hu03-central-de-avisos.png) |
-| HU04 · Acompanhe sua energia | [hu04-acompanhe-sua-energia.png](../wireframes/hu04-acompanhe-sua-energia.png) |
-| HU05 · Entenda sua primeira fatura | [hu05-primeira-fatura.png](../wireframes/hu05-primeira-fatura.png) |
+| HU01 | [Boas-vindas](../wireframes/hu01-boas-vindas-pos-adesao.png) |
+| HU02 | [Contatos](../wireframes/hu02-confirmar-contatos.png) |
+| HU03 | [Avisos](../wireframes/hu03-central-de-avisos.png) |
+| HU04 | [Energia](../wireframes/hu04-acompanhe-sua-energia.png) |
+| HU05 | [Primeira fatura](../wireframes/hu05-primeira-fatura.png) |
 
-**Fluxo de navegação:**
+**Fluxo planejado:** HU01 → HU02 → HU04 → HU05, com acesso à HU03 pela central de avisos. A navegação integral **ainda precisa ser confirmada e testada** com todas as páginas integradas.
 
-```
-HU01 Boas-vindas ──► HU02 Confirme seus contatos ──► HU04 Acompanhe sua energia
-                                                          │
-                                                          └──► HU05 Primeira fatura
+## 5. Entregas registradas na Sprint 1
 
-HU03 Central de avisos: acessível pelo sininho no cabeçalho de todas as telas
-```
+- Estrutura inicial do repositório e dados fictícios em JSON.
+- Cinco personas individuais e duas selecionadas para representar os momentos críticos.
+- Mapas de jornada com dores relacionadas às evidências da Bulbe.
+- Oportunidades documentadas nas Issues [#18](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/18), [#19](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/19) e [#20](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/20).
+- Histórias HU01–HU05 com critérios de aceite no arquivo [`docs/historias.md`](../historias.md).
+- Wireframes das cinco telas, com histórico de contribuições e PRs no GitHub.
 
-[AJUSTAR: confirmar o fluxo acima com o grupo]
+A padronização posterior do README e dos wireframes foi integrada em 22/10/2026 pela [PR #39](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/39). Isso não significa que a implementação das telas já estivesse pronta na Sprint 1.
 
-## 5. O que foi entregue na Sprint 1
+## 6. Pendências e feedback da Sprint Review I
 
-- [x] Repositório no padrão, com a estrutura-base e todos os integrantes como colaboradores
-- [x] 5 personas individuais e 2 personas escolhidas (Fernando e Helena)
-- [x] Mapas de jornada com dores ligadas a dados da Bulbe
-- [x] Oportunidades registradas como Issues (label `oportunidade`)
-- [x] 5 histórias de usuário com critérios de aceite, uma por integrante
-- [x] 5 wireframes, um por tela, nomeados com o ID da história
-- [x] README preenchido
+**Feedback do professor:** o registro disponível não contém comentários específicos. Se o grupo tiver anotações da apresentação, acrescentar apenas o que foi efetivamente dito, identificando a origem.
 
-## 6. O que ficou pendente
+**Pendências encaminhadas para a Sprint 2:** implementar as telas, integrar a navegação, validar os critérios de aceite e realizar testes de funcionamento e responsividade. Não foi encontrada uma lista histórica confirmada de outras tarefas não concluídas na Sprint 1.
 
-- [ ] [AJUSTAR: listar o que não foi concluído, ex.: oportunidades OP04 e OP05, padronização da barra de navegação]
+## 7. Planejamento da Sprint 2 (26/10 a 06/11)
 
-## 7. Feedback recebido
-
-- [AJUSTAR: anotar os comentários do professor durante a review]
-
-## 8. Planning da Sprint 2 (26/10 a 06/11)
-
-| Tarefa | Issue | Responsável |
+| Entrega | Responsável | Referência conhecida |
 | --- | --- | --- |
-| Layout base, cabeçalho com sininho e barra de navegação | #[ ] | [] |
-| Dados fictícios em `data/` (clientes, avisos, status) | #[ ] | [] |
-| Implementar HU01 · Boas-vindas pós-adesão | #[ ] | [@bygor840] |
-| Implementar HU02 · Confirme seus contatos (formulário com validação) | #[ ] | [@amorimplaura] |
-| Implementar HU03 · Central de avisos | #[ ] | [@danielferreira88] |
-| Implementar HU04 · Acompanhe sua energia | #[ ] | [@bpaolucci] |
-| Implementar HU05 · Entenda sua primeira fatura | #[ ] | [@MariaCeciliaCotta] |
-| Ajustes para celular e revisão final | #[ ] | [] |
+| Template compartilhado e navegação | Squad | [PR #41](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/41) |
+| HU01 · Pós-adesão | [@bygor840](https://github.com/bygor840) | [História #16](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/16) · PRs [#42](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/42), [#45](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/45), [#46](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/46) |
+| HU02 · Confirmação de contatos | [@amorimplaura](https://github.com/amorimplaura) | [História #14](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/14) |
+| HU03 · Central de avisos | [@danielferreira88](https://github.com/danielferreira88) | [História #17](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/17) |
+| HU04 · Acompanhamento | [@bpaolucci](https://github.com/bpaolucci) | [História #15](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/15) · [PR #44](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/44) |
+| HU05 · Primeira fatura | [@MariaCeciliaCotta](https://github.com/MariaCeciliaCotta) | [História #13](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/13) |
+| Dados fictícios, integração e testes mobile | Squad | Issues de implementação específicas a confirmar |
 
-**Regras da Sprint 2:** cada tarefa em uma branch própria, entrando na `main` só por Pull Request revisado por outro integrante.
+**Organização prevista:** uma branch para cada implementação, com revisão por Pull Request antes da integração na `main`.
 
-**Meta da Sprint 2:** até 30/10, layout base, navegação e a primeira versão de cada tela lendo dados JSON com `fetch`; até 06/11, todas as telas concluídas, formulário com validação e layout ajustado para celular.
+## 8. Estado observado em 03/11/2026 (após a Sprint 1)
 
-## 9. Próximos passos
+- **Integradas na `main`:** template compartilhado ([PR #41](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/41)), template HU01 ([PR #42](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/42)), estrutura HU01 ([PR #45](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/45)) e HU04 ([PR #44](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/44)).
+- **Aguardando revisão e integração:** finalização da HU01 ([PR #46](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/pull/46)).
+- **Ainda sem arquivos de página na `main`:** HU02, HU03 e HU05, na verificação realizada nesta data.
+- **Ainda não demonstrados como concluídos:** navegação integral, testes das cinco telas, fechamento dos critérios de aceite e feedback da Sprint Review II.
 
-1. Criar no quadro as Issues de implementação (label `implementacao`) com os responsáveis
-2. Aplicar o feedback da review em `docs/historias.md` e nos wireframes
-3. Começar a implementação na semana de 26/10
+O roteiro da Sprint Review II será registrado em `docs/sprints/sprint-review-ii.md`, e a conferência final em `docs/avaliacao-final.md`. Esses arquivos ainda precisam ser adicionados na atualização de documentação.
