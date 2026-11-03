@@ -277,6 +277,163 @@ h1, h2, p, ol, ul { margin: 0; }
   .ponto.atual .ponto-circulo { animation: none; }
 }
 
+/* ---------- Trilha ---------- */
+.trilha {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.indicadores {
+  display: flex;
+  gap: 6px;
+  margin-top: -8px;
+}
+
+.indicadores span {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--cor-linha);
+}
+
+.indicadores .concluida { background: var(--cor-verde); }
+.indicadores .atual { background: var(--cor-azul); }
+.indicadores .atrasada { background: var(--cor-atencao-borda); }
+.indicadores .pendente { background: var(--cor-erro); }
+
+.nada-a-fazer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-verde-escuro);
+}
+
+.nada-a-fazer svg { width: 20px; height: 20px; }
+
+/* Quando "Ver todas as etapas" está aberto, some o card da etapa atual */
+.trilha:has(.todas-etapas[open]) .trilha-resumo { display: none; }
+
+.todas-etapas summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 48px;
+  padding-top: 12px;
+  border-top: 1px solid var(--cor-linha);
+  color: var(--cor-azul);
+  list-style: none;
+  cursor: pointer;
+}
+
+.todas-etapas summary::-webkit-details-marker { display: none; }
+.todas-etapas summary svg { width: 22px; height: 22px; transition: transform 0.2s; }
+.todas-etapas[open] summary svg { transform: rotate(180deg); }
+.todas-etapas[open] summary { order: 2; margin-top: 8px; }
+.todas-etapas[open] { display: flex; flex-direction: column; }
+
+.quando-aberto { display: none; }
+.todas-etapas[open] .quando-aberto { display: inline; }
+.todas-etapas[open] .quando-fechado { display: none; }
+
+/* ---------- Etapa ---------- */
+.lista-etapas {
+  padding: 0;
+  list-style: none;
+}
+
+.etapa {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.lista-etapas .etapa:last-child { padding-bottom: 0; }
+.trilha-resumo .etapa { padding-bottom: 0; }
+
+/* Linha vertical ligando as etapas (só na lista completa) */
+#lista-etapas .etapa:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 44px;
+  bottom: 4px;
+  left: 18.5px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--cor-linha);
+}
+
+#lista-etapas .etapa-concluida:not(:last-child)::after { background: var(--cor-verde); }
+
+.etapa-marcador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-linha);
+  background: var(--cor-branco);
+  color: var(--cor-linha);
+}
+
+.etapa-marcador svg { width: 20px; height: 20px; }
+
+.etapa-concluida .etapa-marcador { border-color: var(--cor-verde); background: var(--cor-verde); color: var(--cor-branco); }
+.etapa-atual .etapa-marcador,
+.etapa-atrasada .etapa-marcador { border-color: var(--cor-azul); background: var(--cor-azul); color: var(--cor-branco); box-shadow: 0 0 0 4px var(--cor-azul-anel); }
+.etapa-pendente .etapa-marcador { border-color: var(--cor-erro); background: var(--cor-erro); color: var(--cor-branco); box-shadow: 0 0 0 4px var(--cor-erro-fundo); }
+
+.etapa-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.etapa-titulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
+.etapa-futura .etapa-titulo,
+.etapa-futura .etapa-descricao { color: var(--cor-texto-secundario); }
+.etapa-atual .etapa-titulo,
+.etapa-atrasada .etapa-titulo { color: var(--cor-azul); }
+.etapa-pendente .etapa-titulo { color: var(--cor-erro-texto); }
+
+.selo {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.selo-agora { background: var(--cor-azul); color: var(--cor-branco); }
+.selo-atrasada { background: var(--cor-atencao-borda); color: var(--cor-atencao-texto); }
+.selo-pendente { background: var(--cor-erro); color: var(--cor-branco); }
+
+.aviso-atraso {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border: 1.5px solid var(--cor-atencao-borda);
+  border-radius: 12px;
+  background: var(--cor-atencao-fundo);
+  color: var(--cor-atencao-texto);
+  font-weight: 500;
+}
+
+.aviso-atraso svg { flex-shrink: 0; width: 22px; height: 22px; }
+
 /* ---------- Contato oficial ---------- */
 .contato {
   display: flex;

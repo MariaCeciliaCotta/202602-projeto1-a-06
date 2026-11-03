@@ -112,6 +112,29 @@
       <!-- Mesma informação da ilustração, em texto (leitor de tela) -->
       <p class="visualmente-oculto" id="caminho-texto"></p>
 
+      <hr class="divisor">
+
+      <!-- Trilha: mostra só a etapa atual e abre para todas -->
+      <div class="trilha" id="trilha">
+        <p class="texto-rotulo texto-secundario" id="contador-etapa">Etapa 1 de 4</p>
+        <div class="indicadores" id="indicadores" aria-hidden="true"></div>
+
+        <p class="nada-a-fazer" id="nada-a-fazer" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span id="nada-a-fazer-texto">Você não precisa fazer nada.</span>
+        </p>
+
+        <ol class="lista-etapas trilha-resumo" id="etapa-atual"></ol>
+
+        <details class="todas-etapas">
+          <summary class="texto-botao">
+            <span class="quando-fechado">Ver todas as etapas</span>
+            <span class="quando-aberto">Mostrar menos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <ol class="lista-etapas" id="lista-etapas"></ol>
+        </details>
+      </div>
     </section>
 
     <!-- 7. Contato oficial -->
