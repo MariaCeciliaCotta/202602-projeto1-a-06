@@ -1,0 +1,185 @@
+/* =========================================================
+   HU04 · Acompanhe sua energia
+   Usa as variáveis do bulbe-ui.css e acrescenta as desta tela.
+   ========================================================= */
+
+:root {
+  --cor-azul-anel: #c9cbf2;
+  --cor-verde: #26d07c;
+  --cor-verde-escuro: #1e7a45;
+  --cor-verde-fundo: #eaf8ef;
+  --cor-verde-borda: #bfe8cc;
+  --cor-laranja: #ff9e1b;
+  --cor-cinza-fundo: #f6f9f9;
+  --cor-cinza-icone: #8a92a3;
+  --cor-atencao-fundo: #fff6e0;
+  --cor-atencao-borda: #f2c14e;
+  --cor-atencao-texto: #6b4e00;
+  --cor-erro: #c62828;
+  --cor-erro-fundo: #fdecec;
+  --cor-erro-borda: #e5484d;
+  --cor-erro-texto: #8e1b1b;
+}
+
+/* ---------- Estilos de texto (iguais aos do app) ---------- */
+.texto-p1 { font-size: 18px; font-weight: 600; line-height: 1.5; letter-spacing: 0.02em; }
+.texto-p2 { font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0.02em; }
+.texto-p3 { font-size: 14px; font-weight: 400; line-height: 1.5; letter-spacing: 0.02em; }
+.texto-rotulo { font-size: 14px; font-weight: 300; line-height: 1.4; }
+.texto-botao { font-size: 14px; font-weight: 600; line-height: 1.4; }
+
+.texto-azul { color: var(--cor-azul); }
+.texto-secundario { color: var(--cor-texto-secundario); }
+
+h1, h2, p, ol, ul { margin: 0; }
+
+/* Garante que hidden esconda mesmo com display definido no CSS */
+[hidden] { display: none !important; }
+
+/* Esconde da tela, mas o leitor de tela continua lendo */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Estrutura ---------- */
+.energia {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.mensagem-erro {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--cor-erro-fundo);
+  color: var(--cor-erro-texto);
+}
+
+.saudacao {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.atualizado {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.atualizado svg { width: 16px; height: 16px; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px;
+  border: 1px solid var(--cor-linha);
+  border-radius: 20px;
+  background: var(--cor-branco);
+}
+
+.card-verde {
+  padding: 20px;
+  border-color: var(--cor-verde-borda);
+  background: var(--cor-verde-fundo);
+}
+
+.divisor {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--cor-linha);
+}
+
+.divisor-verde { background: var(--cor-verde-borda); }
+
+/* ---------- Avisos ---------- */
+.aviso {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.aviso-icone { width: 28px; height: 28px; }
+
+.aviso-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aviso-info {
+  border-left: 6px solid var(--cor-azul);
+  background: var(--cor-azul-claro);
+}
+
+.aviso-info .aviso-icone,
+.aviso-info h2 { color: var(--cor-azul); }
+
+.aviso-erro {
+  border: 1.5px solid var(--cor-erro-borda);
+  background: var(--cor-erro-fundo);
+}
+
+.aviso-erro .aviso-icone { color: var(--cor-erro); }
+.aviso-erro h2 { color: var(--cor-erro-texto); }
+.aviso-erro .botao { grid-column: 1 / -1; }
+
+/* ---------- Botões ---------- */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.botao svg { width: 22px; height: 22px; }
+
+.botao-primario { width: 100%; background: var(--cor-azul); color: var(--cor-branco); }
+.botao-erro { background: var(--cor-erro); color: var(--cor-branco); border-radius: 12px; }
+
+/* ---------- Contato oficial ---------- */
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.telefone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.telefone svg { width: 18px; height: 18px; }
+
+.selo-golpe {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--cor-cinza-fundo);
+}
+
+.selo-golpe svg { flex-shrink: 0; width: 24px; height: 24px; color: var(--cor-verde-escuro); }
