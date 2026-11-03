@@ -156,6 +156,127 @@ h1, h2, p, ol, ul { margin: 0; }
 .botao-primario { width: 100%; background: var(--cor-azul); color: var(--cor-branco); }
 .botao-erro { background: var(--cor-erro); color: var(--cor-branco); border-radius: 12px; }
 
+/* ---------- Caminho da energia ---------- */
+.caminho {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ponto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 76px;
+}
+
+.ponto-circulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--cor-branco);
+  border: 2px solid var(--cor-linha);
+  color: var(--cor-cinza-icone);
+}
+
+.ponto-circulo svg { width: 28px; height: 28px; }
+
+.ponto-nome {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--cor-texto-secundario);
+}
+
+.ponto.concluido .ponto-circulo {
+  border-color: var(--cor-verde);
+  background: var(--cor-verde);
+  color: var(--cor-branco);
+}
+
+.ponto.atual .ponto-circulo {
+  border-color: var(--cor-azul);
+  background: var(--cor-azul);
+  color: var(--cor-branco);
+  box-shadow: 0 0 0 4px var(--cor-azul-anel);
+  animation: anel 2s ease-in-out infinite;
+}
+
+.ponto.pendente .ponto-circulo {
+  border-color: var(--cor-erro);
+  background: var(--cor-erro);
+  color: var(--cor-branco);
+  box-shadow: 0 0 0 4px var(--cor-erro-fundo);
+}
+
+.ponto.concluido .ponto-nome { color: var(--cor-texto); }
+.ponto.atual .ponto-nome { color: var(--cor-texto); font-weight: 600; }
+.ponto.pendente .ponto-nome { color: var(--cor-erro-texto); font-weight: 600; }
+
+/* Linha entre dois pontos. --progresso diz quanto já está verde. */
+.conector {
+  position: relative;
+  flex: 1;
+  height: 56px;
+}
+
+.conector::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right,
+    var(--cor-verde) var(--progresso, 0%),
+    var(--cor-linha) var(--progresso, 0%));
+}
+
+/* Raio de energia que anda pela linha */
+.raio {
+  position: absolute;
+  top: 14px;
+  left: clamp(14px, var(--progresso, 0%), calc(100% - 14px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cor-laranja);
+  color: var(--cor-branco);
+  transform: translateX(-50%);
+  animation: pulso 1.6s ease-in-out infinite;
+}
+
+.raio svg { width: 16px; height: 16px; }
+.raio .raio-pausa { display: none; }
+
+.raio.parado { background: var(--cor-erro); animation: none; }
+.raio.parado .raio-energia { display: none; }
+.raio.parado .raio-pausa { display: block; width: 14px; height: 14px; }
+
+@keyframes pulso {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.15); }
+}
+
+@keyframes anel {
+  0%, 100% { box-shadow: 0 0 0 4px var(--cor-azul-anel); }
+  50% { box-shadow: 0 0 0 8px var(--cor-azul-anel); }
+}
+
+/* Quem pede menos movimento no sistema não vê animação */
+@media (prefers-reduced-motion: reduce) {
+  .raio,
+  .ponto.atual .ponto-circulo { animation: none; }
+}
+
 /* ---------- Contato oficial ---------- */
 .contato {
   display: flex;
