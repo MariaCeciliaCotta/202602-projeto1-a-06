@@ -39,6 +39,11 @@
   <!-- data-estado muda o visual da tela. O JS preenche com o status do cliente. -->
   <main class="energia" id="tela" data-estado="carregando">
 
+    <!-- Aparece só se o JSON não carregar -->
+    <p class="mensagem-erro" id="mensagem-erro" hidden>
+      Não foi possível carregar seus dados. O projeto está aberto pelo Live Server?
+    </p>
+
     <!-- 1. Saudação -->
     <section class="saudacao">
       <h1 class="texto-p1 texto-azul">Olá, <span id="primeiro-nome">cliente</span></h1>
@@ -254,5 +259,6 @@
     </a>
   </nav>
 
+  <script type="module" src="../assets/js/acompanhe-sua-energia.js"></script>
 </body>
 </html>
