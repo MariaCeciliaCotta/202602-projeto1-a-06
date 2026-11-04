@@ -1019,3 +1019,7 @@ details[open] .icone-menos {
     width: 18px;
     height: 18px;
 }
+
+.oculto {
+    display: none !important;
+}
