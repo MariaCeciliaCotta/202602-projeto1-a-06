@@ -124,3 +124,200 @@
     width: 20px;
     height: 20px;
 }
+
+/* =========================================================
+   TELA: ENTENDA SUA PRIMEIRA FATURA (Fundo Azul)
+   ========================================================= */
+
+.tela-destaque-azul {
+    /* Margens negativas para anular o padding da tag <main> do bulbe-ui.css */
+    margin: -24px -20px -110px -20px;
+    /* Padding interno compensando o espaço do menu inferior */
+    padding: 32px 20px 130px 20px;
+    background: linear-gradient(180deg, #08068d 0%, #161ccc 45%, #08068d 100%);
+    min-height: calc(100vh - 64px);
+    color: var(--cor-branco);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Círculos decorativos de fundo */
+.tela-destaque-azul::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 35px solid rgba(255, 255, 255, 0.04);
+    z-index: 0;
+}
+
+.tela-destaque-azul::after {
+    content: "";
+    position: absolute;
+    bottom: 120px;
+    left: -50px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    z-index: 0;
+}
+
+/* Garante que o texto fique acima dos círculos de fundo */
+.tela-destaque-azul>* {
+    position: relative;
+    z-index: 1;
+}
+
+.decoracao-riscos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.risco {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.risco.verde {
+    width: 20px;
+    background-color: #20c997;
+    transform: rotate(-25deg);
+}
+
+.risco.azul {
+    width: 16px;
+    background-color: #339af0;
+}
+
+.risco.laranja {
+    width: 20px;
+    background-color: #f59f00;
+    transform: rotate(25deg);
+}
+
+.badge-boas-vindas {
+    font-size: 11px;
+    font-weight: 600;
+    color: #c7d2fe;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.titulo-destaque {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--cor-branco);
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.texto-destaque {
+    font-size: 15px;
+    color: #e0e7ff;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+
+.cartao-info-azul {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+    backdrop-filter: blur(8px);
+}
+
+.cartao-info-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #20c997;
+    color: #08068d;
+    border-radius: 8px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.cartao-info-icone svg {
+    width: 18px;
+    height: 18px;
+}
+
+.cartao-info-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cartao-info-texto h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cor-branco);
+    margin: 0;
+}
+
+.cartao-info-texto p {
+    font-size: 14px;
+    color: #e0e7ff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.botao-amarelo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffc107;
+    color: #08068d;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-bottom: auto;
+    /* Empurra o rodapé para o final da tela */
+    width: max-content;
+    transition: transform 0.2s;
+}
+
+.botao-amarelo:active {
+    transform: scale(0.97);
+}
+
+.botao-amarelo svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+.rodape-interno {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.logo-rodape {
+    height: 24px;
+    width: fit-content;
+}
+
+.rodape-interno p {
+    font-size: 12px;
+    color: #a5b4fc;
+    margin: 0;
+}
