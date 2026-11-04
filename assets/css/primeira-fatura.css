@@ -219,14 +219,19 @@ body {
 }
 
 .cartao-selecao:focus-within {
-    outline: 2px solid var(--cor-azul);
-    outline-offset: 2px;
+    outline: none;
 }
 
 .cartao-selecao.selecionado,
 .cartao-selecao:has(input:checked) {
-    border: 2px solid var(--cor-azul);
-    padding: 15.5px;
+    border: 1.5px solid var(--cor-azul);
+    background-color: var(--cor-azul-claro);
+    padding: 16px;
+}
+
+.icone-selecao.ativo {
+    background-color: #e0e7ff;
+    color: var(--cor-azul);
 }
 
 .cartao-texto,
@@ -333,11 +338,6 @@ body {
 .icone-cinza-claro {
     background: #f1f3f4;
     color: var(--cor-texto-secundario);
-}
-
-.icone-selecao.ativo {
-    background: var(--cor-azul);
-    color: var(--cor-branco);
 }
 
 .cartao-seta {
