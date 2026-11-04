@@ -304,20 +304,148 @@
     margin-left: 8px;
 }
 
-.rodape-interno {
-    margin-top: 40px;
+/* =========================================================
+   TELA: DUAS EMPRESAS, PAPÉIS DIFERENTES
+   ========================================================= */
+
+/* Fundo ligeiramente cinza/azulado para a tela toda, fazendo os cartões brancos destacarem */
+body {
+    background-color: #f8fafc;
+}
+
+.secao-papeis-diferentes {
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
-.logo-rodape {
-    height: 24px;
-    width: fit-content;
+.cabecalho-centralizado {
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.rodape-interno p {
-    font-size: 12px;
-    color: #a5b4fc;
+.titulo-escuro {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-azul);
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+}
+
+.pergunta-destaque {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cor-texto);
+    margin: 0 0 12px 0;
+}
+
+.texto-explicativo {
+    font-size: 14px;
+    color: var(--cor-texto-secundario);
     margin: 0;
+    line-height: 1.5;
+}
+
+.lista-empresas {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cartao-empresa {
+    background: var(--cor-branco);
+    border-radius: 16px;
+    padding: 20px 16px;
+    display: flex;
+    gap: 16px;
+    /* Sombra muito suave para dar profundidade como no design */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.icone-empresa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.icone-empresa.azul {
+    background: var(--cor-azul-claro);
+    color: var(--cor-azul);
+}
+
+.icone-empresa.verde {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.icone-empresa svg {
+    width: 22px;
+    height: 22px;
+}
+
+.conteudo-empresa {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-categoria {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cor-azul);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.conteudo-empresa h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cor-azul);
+    margin: 0 0 8px 0;
+}
+
+.conteudo-empresa p {
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.botao-voltar-azul {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--cor-azul);
+    /* Fundo Azul Bulbe */
+    color: var(--cor-branco);
+    /* Texto e ícone brancos */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    /* Cantos menos redondos (não é formato pílula) */
+    text-decoration: none;
+    width: max-content;
+    margin-bottom: 32px;
+    /* Espaço no final da tela */
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-voltar-azul:active {
+    background-color: #060470;
+    /* Azul levemente mais escuro ao clicar */
+    transform: scale(0.98);
+}
+
+.botao-voltar-azul svg {
+    width: 18px;
+    height: 18px;
 }
