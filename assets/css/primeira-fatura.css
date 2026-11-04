@@ -449,3 +449,205 @@ body {
     width: 18px;
     height: 18px;
 }
+
+/* =========================================================
+   TELA: QUAL CONTA DEVO PAGAR AGORA?
+   ========================================================= */
+
+.secao-simulacao {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Classe utilitária para esconder elementos visualmente, mas mantê-los para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Opcional: Estilo específico para o badge dessa tela se precisar sobrescrever o anterior */
+.cabecalho-centralizado .badge-azul {
+    letter-spacing: 1px;
+}
+
+.grupo-selecao {
+    border: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* CARTÕES DE SELEÇÃO (Estilizando a label como um botão gigante) */
+.cartao-selecao {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: var(--cor-branco);
+    border: 1.5px solid var(--cor-linha);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Foco de teclado por acessibilidade */
+.cartao-selecao:focus-within {
+    outline: 2px solid var(--cor-azul);
+    outline-offset: 2px;
+}
+
+/* Aparência quando o input escondido estiver 'checked' ou tiver a classe .selecionado */
+.cartao-selecao.selecionado,
+.cartao-selecao:has(input:checked) {
+    border-color: var(--cor-azul);
+    border-width: 2px;
+    padding: 15.5px;
+    /* Compensa o 0.5px a mais da borda para não tremer a tela */
+}
+
+.icone-selecao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.icone-selecao.ativo {
+    background-color: var(--cor-azul);
+    color: var(--cor-branco);
+}
+
+.icone-selecao.inativo {
+    background-color: var(--cor-azul-claro);
+    color: var(--cor-azul);
+}
+
+.icone-selecao svg {
+    width: 22px;
+    height: 22px;
+}
+
+.conteudo-selecao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-selecao {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cor-azul);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.texto-selecao {
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+}
+
+/* O círculo que simula o botão de rádio visualmente */
+.radio-indicador {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    /* Borda cinza padrão */
+    margin-left: 12px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+/* Quando selecionado, a borda "cresce" para dentro criando o preenchimento azul */
+.cartao-selecao.selecionado .radio-indicador,
+.cartao-selecao:has(input:checked) .radio-indicador {
+    border-color: var(--cor-azul);
+    border-width: 6px;
+}
+
+
+/* CARTÃO DE ORIENTAÇÃO VERDE (Resultado) */
+.cartao-orientacao-verde {
+    display: flex;
+    align-items: flex-start;
+    background-color: #eaf8f1;
+    /* Verde muito claro */
+    border-radius: 16px;
+    padding: 24px 16px;
+    margin-bottom: 32px;
+    /* Empurra o botão de voltar para baixo */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe da tarja verde na lateral esquerda */
+.cartao-orientacao-verde::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background-color: #20c997;
+    /* Verde vivo */
+    border-radius: 16px 0 0 16px;
+}
+
+.icone-orientacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--cor-branco);
+    color: #1e8e3e;
+    border-radius: 10px;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.icone-orientacao svg {
+    width: 20px;
+    height: 20px;
+}
+
+.conteudo-orientacao {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-verde {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1e8e3e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.conteudo-orientacao h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--cor-azul);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.conteudo-orientacao p {
+    font-size: 14px;
+    color: var(--cor-texto);
+    margin: 0;
+    line-height: 1.5;
+}
