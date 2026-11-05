@@ -1,0 +1,140 @@
+[
+  {
+    "id": "m-p1",
+    "clienteId": 1,
+    "tipo": "pendencia",
+    "titulo": "Confirme seu WhatsApp",
+    "texto": "É por ele que sua 1ª fatura vai chegar. Sem o número confirmado, você pode perder avisos importantes.",
+    "prazo": "2026-11-12",
+    "acao": { "rotulo": "Confirmar", "link": "confirmar-contatos.html" }
+  },
+  {
+    "id": "m-a5",
+    "clienteId": 1,
+    "tipo": "aviso",
+    "data": "2026-10-28",
+    "canal": "app",
+    "titulo": "Sua conexão com a Cemig começou",
+    "texto": "A Cemig está ligando sua casa à energia da Bulbe. Continue pagando a conta da Cemig até a conexão terminar.",
+    "lido": false
+  },
+  {
+    "id": "m-a4",
+    "clienteId": 1,
+    "tipo": "aviso",
+    "data": "2026-09-19",
+    "canal": "whatsapp",
+    "titulo": "Continue pagando a Cemig por enquanto",
+    "texto": "Até a conexão terminar, a conta da Cemig continua chegando e precisa ser paga normalmente.",
+    "lido": false
+  },
+  {
+    "id": "m-a3",
+    "clienteId": 1,
+    "tipo": "aviso",
+    "data": "2026-09-08",
+    "canal": "email",
+    "titulo": "Recebemos sua conta de luz",
+    "texto": "Sua conta foi analisada e aprovada. O próximo passo é a conexão com a Cemig.",
+    "lido": true
+  },
+  {
+    "id": "m-a2",
+    "clienteId": 1,
+    "tipo": "aviso",
+    "data": "2026-09-04",
+    "canal": "email",
+    "titulo": "De onde vem o seu desconto",
+    "texto": "A energia vem de usinas solares da Bulbe e chega pela rede da Cemig. O desconto aparece na fatura da Bulbe.",
+    "lido": true
+  },
+  {
+    "id": "m-a1",
+    "clienteId": 1,
+    "tipo": "aviso",
+    "data": "2026-09-03",
+    "canal": "whatsapp",
+    "titulo": "Boas-vindas à Bulbe!",
+    "texto": "Sua adesão foi recebida. Vamos te avisar a cada etapa até a sua primeira fatura.",
+    "lido": true
+  },
+
+  {
+    "id": "j-a3",
+    "clienteId": 2,
+    "tipo": "aviso",
+    "data": "2026-10-20",
+    "canal": "app",
+    "titulo": "Sua conexão foi concluída",
+    "texto": "Sua casa já recebe a energia da Bulbe. A 1ª fatura chega por WhatsApp e e-mail.",
+    "lido": false
+  },
+  {
+    "id": "j-a2",
+    "clienteId": 2,
+    "tipo": "aviso",
+    "data": "2026-08-20",
+    "canal": "email",
+    "titulo": "Recebemos sua conta de luz",
+    "texto": "Sua conta foi analisada e aprovada. O próximo passo é a conexão com a Cemig.",
+    "lido": true
+  },
+  {
+    "id": "j-a1",
+    "clienteId": 2,
+    "tipo": "aviso",
+    "data": "2026-08-15",
+    "canal": "whatsapp",
+    "titulo": "Boas-vindas à Bulbe!",
+    "texto": "Sua adesão foi recebida. Vamos te avisar a cada etapa até a sua primeira fatura.",
+    "lido": true
+  },
+
+  {
+    "id": "a-p1",
+    "clienteId": 3,
+    "tipo": "pendencia",
+    "titulo": "Envie sua conta de luz",
+    "texto": "Precisamos dela para concluir sua adesão e começar o seu desconto.",
+    "prazo": "2026-11-09"
+  },
+  {
+    "id": "a-p2",
+    "clienteId": 3,
+    "tipo": "pendencia",
+    "titulo": "Confirme seu e-mail",
+    "texto": "Assim você recebe os avisos da Bulbe mesmo se o WhatsApp falhar.",
+    "prazo": "2026-11-16",
+    "acao": { "rotulo": "Confirmar", "link": "confirmar-contatos.html" }
+  },
+  {
+    "id": "a-a3",
+    "clienteId": 3,
+    "tipo": "aviso",
+    "data": "2026-10-03",
+    "canal": "whatsapp",
+    "titulo": "Conta de luz: última chance",
+    "texto": "Envie sua conta de luz para não atrasar a conexão.",
+    "lido": false
+  },
+  {
+    "id": "a-a2",
+    "clienteId": 3,
+    "tipo": "aviso",
+    "data": "2026-09-26",
+    "canal": "app",
+    "titulo": "Falta só a sua conta de luz",
+    "texto": "Envie uma foto da sua última conta da Cemig para seguirmos com a adesão.",
+    "lido": false
+  },
+  {
+    "id": "a-a1",
+    "clienteId": 3,
+    "tipo": "aviso",
+    "data": "2026-09-21",
+    "canal": "whatsapp",
+    "titulo": "Boas-vindas à Bulbe!",
+    "texto": "Sua adesão foi recebida. Vamos te avisar a cada etapa até a sua primeira fatura.",
+    "lido": true
+  }
+]

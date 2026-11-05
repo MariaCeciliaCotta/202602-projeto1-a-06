@@ -24,3 +24,9 @@ export async function buscarFaturasDoCliente(clienteId) {
   const faturas = await buscarFaturas();
   return faturas.filter((fatura) => fatura.clienteId === clienteId);
 }
+
+// HU03 · Central de avisos: avisos e pendências de um cliente
+export async function buscarAvisosDoCliente(clienteId) {
+  const avisos = await lerJSON('avisos.json');
+  return avisos.filter((aviso) => aviso.clienteId === clienteId);
+}
