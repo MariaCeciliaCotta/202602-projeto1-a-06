@@ -161,7 +161,7 @@ function etapaHTML(indice, situacao, dados) {
 
 function mostrarSaudacao(cliente, estado) {
   document.querySelector('#primeiro-nome').textContent = cliente.nome.split(' ')[0];
-  document.querySelector('#subtitulo').textContent = SUBTITULOS[estado] || 'Está em andamento';
+  document.querySelector('#subtitulo').textContent = SUBTITULOS[estado] || 'Sua adesão está em andamento';
 
   const agora = new Date();
   document.querySelector('#atualizado-em').textContent =
