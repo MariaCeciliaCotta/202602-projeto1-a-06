@@ -217,7 +217,8 @@ body { font-family: var(--fonte); background-color: var(--cor-branco); color: va
     font-weight: bold;
 }
 
-.atalhos a span { font-size: 26px; }
+/* Mesmos ícones do menu de baixo: Contatos, Avisos e Energia */
+.atalhos a svg { width: 26px; height: 26px; }
 
 .contrato { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
