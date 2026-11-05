@@ -22,7 +22,6 @@ const CANAIS = {
 };
 
 const tela = {
-  saudacao: document.querySelector('#saudacao-titulo'),
   erro: document.querySelector('#mensagem-erro'),
   contadorPendencias: document.querySelector('#contador-pendencias'),
   contadorNaoLidos: document.querySelector('#contador-nao-lidos'),
@@ -191,7 +190,6 @@ async function iniciar() {
     ]);
 
     const cliente = clientes.find((c) => c.id === clienteId);
-    if (cliente) tela.saudacao.textContent = `Olá, ${cliente.nome.split(' ')[0]}`;
 
     // Pendência de contato já confirmado não aparece mais
     const pendencias = itens.filter((item) =>

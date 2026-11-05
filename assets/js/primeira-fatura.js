@@ -1,31 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =========================================================
-       1. LÓGICA DO JSON (TELA DE BOAS VINDAS)
-       ========================================================= */
-    const elementoNome = document.getElementById('nome-cliente');
-
-    // Só tenta fazer o fetch se o elemento de nome existir na página atual
-    if (elementoNome) {
-        fetch('../data/clientes.json')
-            .then(response => response.json())
-            .then(clientes => {
-                if (clientes && clientes.length > 0) {
-                    // Usa o cliente da URL (?cliente=N); se não achar, o primeiro
-                    const idCliente = Number(new URLSearchParams(location.search).get('cliente'));
-                    const cliente = clientes.find(c => c.id === idCliente) || clientes[0];
-                    const nomeCompleto = cliente.nome;
-                    const primeiroNome = nomeCompleto.split(' ')[0];
-                    elementoNome.textContent = primeiroNome;
-                }
-            })
-            .catch(erro => {
-                console.error("Erro ao carregar JSON:", erro);
-            });
-    }
-
-    /* =========================================================
-       2. LÓGICA DOS BOTÕES DE RÁDIO (TELA DA SIMULAÇÃO)
+       1. LÓGICA DOS BOTÕES DE RÁDIO (TELA DA SIMULAÇÃO)
        ========================================================= */
     const radioAguardando = document.getElementById('radio-aguardando');
     const radioConfirmada = document.getElementById('radio-confirmada');
