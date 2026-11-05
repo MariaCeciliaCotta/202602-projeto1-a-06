@@ -11,7 +11,8 @@ async function iniciar() {
   try {
     const clientes = await buscarClientes();
     lista.innerHTML = clientes
-      .map((c) => `<li><strong>${c.nome}</strong> · ${c.cidade} · ${STATUS[c.status] ?? c.status}</li>`)
+      // Cada cliente abre as telas com ?cliente=N (veja assets/js/cliente-atual.js)
+      .map((c) => `<li><a href="pages/acompanhe-sua-energia.html?cliente=${c.id}"><strong>${c.nome}</strong></a> · ${c.cidade} · ${STATUS[c.status] ?? c.status}</li>`)
       .join('');
   } catch (erro) {
     lista.innerHTML = '<li>Não foi possível carregar os dados. O projeto está aberto pelo Live Server?</li>';

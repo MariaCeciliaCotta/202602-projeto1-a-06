@@ -49,6 +49,26 @@ function salvarIdsLidos(ids) {
   }
 }
 
+// ---------- Contatos já confirmados ----------
+// Uma pendência de contato ("contato": "whatsapp" ou "email" no avisos.json)
+// some quando o contato já está confirmado no clientes.json ou quando a
+// cliente confirmou os dados na tela "Confirme seus contatos" (HU02).
+// A chave abaixo precisa ser a mesma usada em confirmar-contatos.js.
+function confirmouNaHU02(clienteId) {
+  try {
+    return Boolean(localStorage.getItem(`bulbe:hu02:contatos:cliente:${clienteId}:demo:v2`));
+  } catch {
+    return false;
+  }
+}
+
+function contatoConfirmado(cliente, contato) {
+  if (confirmouNaHU02(cliente.id)) return true;
+  if (contato === 'whatsapp') return cliente.whatsappConfirmado === true;
+  if (contato === 'email') return cliente.emailConfirmado === true;
+  return false;
+}
+
 // ---------- Datas ----------
 // As datas do JSON vêm como "2026-11-12". O T12:00 evita erro de fuso horário.
 function paraData(texto) {
@@ -82,7 +102,7 @@ function criar(tag, classe, texto) {
   return elemento;
 }
 
-function montarPendencia(pendencia) {
+function montarPendencia(pendencia, clienteId) {
   const item = criar('li', 'pendencia');
 
   item.append(
@@ -95,7 +115,8 @@ function montarPendencia(pendencia) {
 
   if (pendencia.acao) {
     const botao = criar('a', 'botao', pendencia.acao.rotulo);
-    botao.href = pendencia.acao.link;
+    // Leva o cliente junto, para a outra tela abrir os dados da pessoa certa
+    botao.href = `${pendencia.acao.link}?cliente=${clienteId}`;
     botao.setAttribute('aria-label', `${pendencia.acao.rotulo}: ${pendencia.titulo}`);
     rodape.append(botao);
   }
@@ -141,10 +162,10 @@ function atualizarContadorNaoLidos() {
 }
 
 // ---------- Tela ----------
-function mostrarPendencias(pendencias) {
+function mostrarPendencias(pendencias, clienteId) {
   // A que vence primeiro fica em cima
   pendencias.sort((a, b) => paraData(a.prazo) - paraData(b.prazo));
-  tela.listaPendencias.replaceChildren(...pendencias.map(montarPendencia));
+  tela.listaPendencias.replaceChildren(...pendencias.map((p) => montarPendencia(p, clienteId)));
   tela.listaPendencias.hidden = pendencias.length === 0;
   tela.semPendencias.hidden = pendencias.length > 0;
   tela.contadorPendencias.textContent = pendencias.length;
@@ -172,7 +193,12 @@ async function iniciar() {
     const cliente = clientes.find((c) => c.id === clienteId);
     if (cliente) tela.saudacao.textContent = `Olá, ${cliente.nome.split(' ')[0]}`;
 
-    mostrarPendencias(itens.filter((item) => item.tipo === 'pendencia'));
+    // Pendência de contato já confirmado não aparece mais
+    const pendencias = itens.filter((item) =>
+      item.tipo === 'pendencia' &&
+      !(item.contato && cliente && contatoConfirmado(cliente, item.contato))
+    );
+    mostrarPendencias(pendencias, clienteId);
     mostrarAvisos(itens.filter((item) => item.tipo === 'aviso'));
   } catch (erro) {
     tela.erro.hidden = false;
