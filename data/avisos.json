@@ -4,6 +4,7 @@
     "clienteId": 1,
     "tipo": "pendencia",
     "titulo": "Confirme seu WhatsApp",
+    "contato": "whatsapp",
     "texto": "É por ele que sua 1ª fatura vai chegar. Sem o número confirmado, você pode perder avisos importantes.",
     "prazo": "2026-11-12",
     "acao": { "rotulo": "Confirmar", "link": "confirmar-contatos.html" }
@@ -103,6 +104,7 @@
     "clienteId": 3,
     "tipo": "pendencia",
     "titulo": "Confirme seu e-mail",
+    "contato": "email",
     "texto": "Assim você recebe os avisos da Bulbe mesmo se o WhatsApp falhar.",
     "prazo": "2026-11-16",
     "acao": { "rotulo": "Confirmar", "link": "confirmar-contatos.html" }

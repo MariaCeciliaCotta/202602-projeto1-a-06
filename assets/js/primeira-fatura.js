@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(clientes => {
                 if (clientes && clientes.length > 0) {
-                    const nomeCompleto = clientes[0].nome;
+                    // Usa o cliente da URL (?cliente=N); se não achar, o primeiro
+                    const idCliente = Number(new URLSearchParams(location.search).get('cliente'));
+                    const cliente = clientes.find(c => c.id === idCliente) || clientes[0];
+                    const nomeCompleto = cliente.nome;
                     const primeiroNome = nomeCompleto.split(' ')[0];
                     elementoNome.textContent = primeiroNome;
                 }
