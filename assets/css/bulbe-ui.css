@@ -1,17 +1,9 @@
+@import url("cores.css"); /* cores, fonte e medidas de todas as telas */
+
 /* =========================================================
    Layout base das telas: cabeçalho + menu de baixo
    Cores e fonte iguais às do app atual da Bulbe.
    ========================================================= */
-
-:root {
-  --cor-azul: #08068d;
-  --cor-azul-claro: #eef0ff;
-  --cor-texto: #3e4d5b;
-  --cor-texto-secundario: #536679;
-  --cor-linha: #d1d9e0;
-  --cor-branco: #ffffff;
-  --fonte: "Poppins", sans-serif;
-}
 
 * {
   box-sizing: border-box;
@@ -142,3 +134,37 @@ main {
 .menu a.ativo .menu-icone {
   background: var(--cor-azul-claro);
 }
+
+/* ---------- Sininho com pendência ou aviso novo (assets/js/app.js) ---------- */
+.topo-sino {
+  position: relative;
+}
+
+.topo-sino.tem-novo::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cor-laranja);
+  box-shadow: 0 0 0 2px var(--cor-azul); /* contorno azul separa a bolinha do sino */
+}
+
+/* ---------- Ajudantes usados em várias telas ---------- */
+
+/* Garante que hidden esconda mesmo com display definido no CSS */
+[hidden] { display: none !important; }
+
+/* Esconde da tela, mas o leitor de tela continua lendo */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.texto-secundario { color: var(--cor-texto-secundario); }

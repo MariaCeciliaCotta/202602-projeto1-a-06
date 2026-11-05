@@ -11,13 +11,13 @@
   <!-- Base do squad (cabeçalho e menu) + estilo desta tela -->
   <link rel="stylesheet" href="../assets/css/bulbe-ui.css">
   <link rel="stylesheet" href="../assets/css/central-de-avisos.css">
-  <script src="../assets/js/cliente-atual.js"></script>
+  <script type="module" src="../assets/js/app.js"></script>
 </head>
 <body>
 
   <!-- ================= CABEÇALHO (igual ao template) ================= -->
   <header class="topo">
-    <a class="topo-botao" href="#" aria-label="Abrir menu">
+    <a class="topo-botao" href="../index.html" aria-label="Voltar para a escolha de cliente">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </a>
 
@@ -53,7 +53,7 @@
     <section class="resumo" aria-label="Resumo">
       <div class="resumo-item resumo-pendencias">
         <strong id="contador-pendencias">0</strong>
-        <span>pendências suas</span>
+        <span>suas pendências</span>
       </div>
       <div class="resumo-item">
         <strong id="contador-nao-lidos">0</strong>

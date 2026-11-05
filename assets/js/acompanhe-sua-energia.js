@@ -3,12 +3,14 @@
 // Lê o cliente do data/clientes.json e monta a tela de acordo
 // com o status da adesão.
 //
-// Para testar outros clientes:  acompanhe-sua-energia.html?cliente=2
-// Para ver estados que ainda não existem no JSON:
-//   ?estado=atrasado   ou   ?estado=pendencia
+// Um cliente para cada estado da tela:
+//   ?cliente=1 → em conexão          ?cliente=4 → aguardando análise
+//   ?cliente=2 → conectado           ?cliente=5 → atrasado
+//   ?cliente=3 → pendência (falta a conta de luz)
+// Também dá para forçar um estado: ?estado=atrasado ou ?estado=pendencia
 // =========================================================
 
-import { buscarClientes, buscarFaturasDoCliente } from './api.js';
+import { buscarClientes, buscarFaturasDoCliente, buscarAvisosDoCliente } from './api.js';
 
 // ---------- Valores fictícios usados nos cálculos ----------
 const PRAZO_CONEXAO_DIAS = 90; // prazo previsto da adesão até a conexão
@@ -18,7 +20,7 @@ const PARTE_BULBE = 0.9;       // depois da conexão, 90% da energia vem da Bulb
 
 const TITULOS_ETAPAS = [
   'Adesão recebida',
-  'Conta de luz analisada',
+  'Análise da conta de luz',
   'Conexão com a Cemig',
   '1ª fatura Bulbe'
 ];
@@ -159,7 +161,7 @@ function etapaHTML(indice, situacao, dados) {
 
 function mostrarSaudacao(cliente, estado) {
   document.querySelector('#primeiro-nome').textContent = cliente.nome.split(' ')[0];
-  document.querySelector('#subtitulo').textContent = SUBTITULOS[estado] || 'Sua adesão está andando';
+  document.querySelector('#subtitulo').textContent = SUBTITULOS[estado] || 'Está em andamento';
 
   const agora = new Date();
   document.querySelector('#atualizado-em').textContent =
@@ -262,7 +264,10 @@ async function iniciar() {
   try {
     const clientes = await buscarClientes();
     const cliente = clientes.find((c) => c.id === idCliente) || clientes[0];
-    const faturas = await buscarFaturasDoCliente(cliente.id);
+    const [faturas, avisos] = await Promise.all([
+      buscarFaturasDoCliente(cliente.id),
+      buscarAvisosDoCliente(cliente.id)
+    ]);
 
     const hoje = new Date();
     const adesao = lerData(cliente.dataAdesao);
@@ -277,6 +282,11 @@ async function iniciar() {
     // O estado vem do JSON. Se passou do prazo, a conexão está atrasada.
     let estado = cliente.status;
     if (estado === 'em_conexao' && hoje > previsao) estado = 'atrasado';
+
+    // Uma pendência marcada com "bloqueiaAdesao" no avisos.json (ex.: falta a
+    // conta de luz) para a análise: a tela mostra o estado "pendencia".
+    const adesaoTravada = avisos.some((item) => item.tipo === 'pendencia' && item.bloqueiaAdesao);
+    if (estado === 'aguardando_qualificacao' && adesaoTravada) estado = 'pendencia';
 
     // Estados de demonstração pela URL (?estado=atrasado ou ?estado=pendencia)
     const estadoDaUrl = parametros.get('estado');

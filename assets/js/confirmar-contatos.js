@@ -171,8 +171,8 @@ async function inicializar() {
       throw new Error('Cliente não encontrado');
     }
 
-    clienteLine.textContent =
-      `Olá, ${String(cliente.nome).split(' ')[0]}! Confira suas informações.`;
+    // O título já diz onde a pessoa está; a saudação fica só na tela principal.
+    clienteLine.hidden = true;
 
     // Dados reais do arquivo JSON do projeto.
     // Neste MVP, o JSON contém contatos de exemplo.
