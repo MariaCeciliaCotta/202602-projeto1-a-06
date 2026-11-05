@@ -5,15 +5,15 @@
 // para o mais antigo.
 //
 // Para testar outros clientes:
-//   central-de-avisos.html?cliente=1  → com 1 pendência
-//   central-de-avisos.html?cliente=2  → sem pendências
+//   central-de-avisos.html?cliente=1  → com 1 pendência (WhatsApp)
 //   central-de-avisos.html?cliente=3  → com 2 pendências
+//   central-de-avisos.html?cliente=4  → sem pendências
 // =========================================================
 
 import { buscarClientes, buscarAvisosDoCliente } from './api.js';
+import { lerIdsLidos, salvarIdsLidos, pendenciasAbertas } from './app.js';
 
 const CLIENTE_PADRAO = 1;
-const CHAVE_LIDOS = 'bulbe-avisos-lidos'; // avisos lidos ficam salvos no navegador
 
 const CANAIS = {
   whatsapp: 'WhatsApp',
@@ -30,43 +30,7 @@ const tela = {
   listaAvisos: document.querySelector('#lista-avisos')
 };
 
-// ---------- Avisos lidos (guardados no navegador) ----------
-// O try/catch evita erro quando o navegador bloqueia o localStorage.
-function lerIdsLidos() {
-  try {
-    return new Set(JSON.parse(localStorage.getItem(CHAVE_LIDOS)) ?? []);
-  } catch {
-    return new Set();
-  }
-}
-
-function salvarIdsLidos(ids) {
-  try {
-    localStorage.setItem(CHAVE_LIDOS, JSON.stringify([...ids]));
-  } catch {
-    // Sem localStorage, o aviso fica lido só até recarregar a página.
-  }
-}
-
-// ---------- Contatos já confirmados ----------
-// Uma pendência de contato ("contato": "whatsapp" ou "email" no avisos.json)
-// some quando o contato já está confirmado no clientes.json ou quando a
-// cliente confirmou os dados na tela "Confirme seus contatos" (HU02).
-// A chave abaixo precisa ser a mesma usada em confirmar-contatos.js.
-function confirmouNaHU02(clienteId) {
-  try {
-    return Boolean(localStorage.getItem(`bulbe:hu02:contatos:cliente:${clienteId}:demo:v2`));
-  } catch {
-    return false;
-  }
-}
-
-function contatoConfirmado(cliente, contato) {
-  if (confirmouNaHU02(cliente.id)) return true;
-  if (contato === 'whatsapp') return cliente.whatsappConfirmado === true;
-  if (contato === 'email') return cliente.emailConfirmado === true;
-  return false;
-}
+// Avisos lidos e pendências abertas: regras em app.js
 
 // ---------- Datas ----------
 // As datas do JSON vêm como "2026-11-12". O T12:00 evita erro de fuso horário.
@@ -192,11 +156,7 @@ async function iniciar() {
     const cliente = clientes.find((c) => c.id === clienteId);
 
     // Pendência de contato já confirmado não aparece mais
-    const pendencias = itens.filter((item) =>
-      item.tipo === 'pendencia' &&
-      !(item.contato && cliente && contatoConfirmado(cliente, item.contato))
-    );
-    mostrarPendencias(pendencias, clienteId);
+    mostrarPendencias(pendenciasAbertas(itens, cliente), clienteId);
     mostrarAvisos(itens.filter((item) => item.tipo === 'aviso'));
   } catch (erro) {
     tela.erro.hidden = false;

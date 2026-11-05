@@ -11,7 +11,7 @@ async function iniciar() {
   try {
     const clientes = await buscarClientes();
     lista.innerHTML = clientes
-      // Cada cliente abre as telas com ?cliente=N (veja assets/js/cliente-atual.js)
+      // Cada cliente abre as telas com ?cliente=N (veja assets/js/app.js)
       .map((c) => `<li><a href="pages/acompanhe-sua-energia.html?cliente=${c.id}"><strong>${c.nome}</strong></a> · ${c.cidade} · ${STATUS[c.status] ?? c.status}</li>`)
       .join('');
   } catch (erro) {

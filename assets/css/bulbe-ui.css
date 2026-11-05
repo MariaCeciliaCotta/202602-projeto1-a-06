@@ -135,6 +135,23 @@ main {
   background: var(--cor-azul-claro);
 }
 
+/* ---------- Sininho com pendência ou aviso novo (assets/js/app.js) ---------- */
+.topo-sino {
+  position: relative;
+}
+
+.topo-sino.tem-novo::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cor-laranja);
+  box-shadow: 0 0 0 2px var(--cor-azul); /* contorno azul separa a bolinha do sino */
+}
+
 /* ---------- Ajudantes usados em várias telas ---------- */
 
 /* Garante que hidden esconda mesmo com display definido no CSS */
