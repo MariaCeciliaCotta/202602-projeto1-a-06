@@ -20,7 +20,7 @@ const PARTE_BULBE = 0.9;       // depois da conexão, 90% da energia vem da Bulb
 
 const TITULOS_ETAPAS = [
   'Adesão recebida',
-  'Conta de luz analisada',
+  'Análise da conta de luz',
   'Conexão com a Cemig',
   '1ª fatura Bulbe'
 ];
@@ -161,7 +161,7 @@ function etapaHTML(indice, situacao, dados) {
 
 function mostrarSaudacao(cliente, estado) {
   document.querySelector('#primeiro-nome').textContent = cliente.nome.split(' ')[0];
-  document.querySelector('#subtitulo').textContent = SUBTITULOS[estado] || 'Sua adesão está andando';
+  document.querySelector('#subtitulo').textContent = SUBTITULOS[estado] || 'Está em andamento';
 
   const agora = new Date();
   document.querySelector('#atualizado-em').textContent =
