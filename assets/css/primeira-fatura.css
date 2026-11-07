@@ -428,10 +428,14 @@ body {
 
 /* --- COMPONENTES ESPECÍFICOS --- */
 .tela-destaque-azul {
-    margin: -24px -20px -110px -20px;
-    padding: 32px 20px 130px 20px;
+    /* A margem negativa de -16px anula o padding branco do #main, colando o azul nas bordas */
+    margin: -16px;
+    padding: 32px 20px;
     background: linear-gradient(180deg, #08068d 0%, #161ccc 45%, #08068d 100%);
-    min-height: calc(100vh - 64px);
+    /* Ocupa exatamente a altura da tela, descontando os 56px do novo cabeçalho branco */
+    min-height: calc(100vh - 56px);
+    /* Zero na borda para remover o efeito de "cartão" arredondado */
+    border-radius: 0;
     color: var(--cor-branco);
     position: relative;
     overflow: hidden;
