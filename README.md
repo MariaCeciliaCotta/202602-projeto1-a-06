@@ -41,7 +41,7 @@ O mapa de jornada oficial usa **Fernando**, 34 anos, em Belo Horizonte, que prec
 | **HU04 · Energia** | `pages/acompanhe-sua-energia.html` | Tela principal: caminho da energia, etapa atual, atraso, pendência e economia | [HU04 #15](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/15) · [OP03 #20](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/20) | Churn no 1º mês |
 | **HU05 · Primeira fatura** | `pages/primeira-fatura.html` + 4 telas de explicação | Explica a primeira fatura, qual conta pagar e como ela chega | [HU05 #13](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/13) · [OP01 #18](https://github.com/MariaCeciliaCotta/202602-projeto1-a-06/issues/18) | Pagamento da 1ª fatura |
 
-**Fluxo do app:** no primeiro acesso depois da adesão, a HU01 leva à HU02 e dá acesso às outras telas. Nos acessos seguintes, a tela principal é a HU04. O menu de baixo (Energia · Avisos · Fatura · Contatos) liga todas as telas, e o sininho do cabeçalho mostra uma bolinha quando há pendência ou aviso não lido.
+**Fluxo do app:** no primeiro acesso depois da adesão, a HU01 leva à HU02 e dá acesso às outras telas. Nos acessos seguintes, a tela principal é a HU04. O menu de baixo (Energia · Fatura · Contatos) liga as telas, e os avisos ficam no sininho do cabeçalho, que mostra uma bolinha quando há pendência ou aviso não lido.
 
 ## 4. Como executar
 
