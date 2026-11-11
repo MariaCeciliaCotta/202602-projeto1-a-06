@@ -39,20 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Verifica se o usuário já passou por esta tela
-    if (localStorage.getItem('primeiraFaturaVista') === 'true') {
-        // Se já viu, redireciona diretamente para a tela definitiva (ex: central-orientacoes.html)
-        // Usamos window.location.replace para que a pessoa não consiga voltar para a tela temporária clicando em "Voltar"
-        window.location.replace('central-orientacoes.html');
-        return; // Interrompe a execução do resto do código
-    }
-
-    // 2. Lógica para marcar que a tela foi vista quando clicar em "Iniciar"
+    // Procura o botão "Iniciar" na página atual.
+    // Isso garante que o código a seguir SÓ rode na tela de "Primeira Fatura".
     const btnIniciar = document.getElementById('btn-iniciar-fatura');
 
     if (btnIniciar) {
+        // 1. Verifica se o usuário já passou por esta tela
+        if (localStorage.getItem('primeiraFaturaVista') === 'true') {
+            window.location.replace('central-orientacoes.html');
+            return;
+        }
+
+        // 2. Lógica para marcar que a tela foi vista quando clicar em "Iniciar"
         btnIniciar.addEventListener('click', () => {
-            // Salva no navegador que o usuário já concluiu o primeiro contato
             localStorage.setItem('primeiraFaturaVista', 'true');
         });
     }
